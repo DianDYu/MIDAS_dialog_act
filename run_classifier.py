@@ -211,7 +211,7 @@ class DAProcessor(DataProcessor):
                 das = split_da[1].strip()
                 label_1 = das.split(";")[0].strip()
                 examples.append(
-                    InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label1))
+                    InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label_1))
             return examples
 
 
