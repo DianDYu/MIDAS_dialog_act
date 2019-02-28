@@ -167,6 +167,54 @@ class MnliProcessor(DataProcessor):
         return examples
 
 
+class DAProcessor(DataProcessor):
+    """Processor for the dialog act data set"""
+
+    def get_train_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            os.path.join(data_dir, "train.txt"), "train")
+
+    def get_dev_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(
+            os.path.join(data_dir, "dev.txt"), "dev")
+
+    def get_labels(self):
+        """See base class."""
+        # return ["oqf", "oqo", "qy", "ny", "ng", "h", "sd", "sv", "cm", "ad", "dad", "b",
+        #     "ba", "%", "fp", "fc", "^h", "cp", "ft", "fa", "bd", "ns", "o", "bg", "qw"]
+        NOTE_DA_MAP = {"sd": "statement", "b": "back-channeling", "sv": "opinion", "ny": "pos_answer", "%": "abandon",
+                       "ba": "appreciation",
+                       "qy": "yes_no_question", "fc": "closing", "ng": "neg_answer", "h": "other_answers", "o": "other",
+                       "sv": "opinion", "ad": "command", "^h": "hold", "cp": "complaint", "fp": "opening",
+                       "bd": "respond_to_apology",
+                       "fa": "apology", "ft": "thanking",
+                       "oqf": "open_question_factual", "oqo": "open_question_opinion", "cm": "comment",
+                       "ns": "nonsense", "dad": "dev_command"
+                       }
+        return list(NOTE_DA_MAP.values())
+
+        # return ['sd', 'b', 'bk', 'sv', 'aa', '%', '% -', 'ba', 'qy', 'ny', 'fc', 'qw', 'nn', 'h', 'qy^d', 'o', 'fo', 'bc', 'by', 'fw', 'bh', '^q', 'bf', 'na', 'ny^e', 'ad', '^2', 'b^m', 'qo', 'qh', '^h', 'ar', 'ng', 'nn^e', 'br', 'no', 'fp', 'qrr', 'arp', 'nd', 'oo', 'cc', 'co', 't1', 'bd', 'aap', 'am', '^g', 'qw^d', 'fa', 'ft', 'oqf', 'oqo', 'cm', 'cp', 'ns', 'bg', 'dad']
+
+    def _create_examples(self, filename, set_type):
+        """Creates examples for the training and dev sets."""
+        examples = []
+        with open(filename) as fp:
+            for (i, line) in enumerate(fp):
+                # example line: "i think it usually does<:><emp> <rsp> does it say something<:>sd"
+                guid = "%s-%s" % (set_type, i)
+                text = line.split(">")
+                text_a = text[0].strip()
+                split_da = text[1].split("##")
+                text_b = split_da[0].strip()
+                das = split_da[1].strip()
+                label_1 = das.split(";")[0].strip()
+                examples.append(
+                    InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label1))
+            return examples
+
+
 class ColaProcessor(DataProcessor):
     """Processor for the CoLA data set (GLUE version)."""
 
@@ -401,12 +449,14 @@ def main():
         "cola": ColaProcessor,
         "mnli": MnliProcessor,
         "mrpc": MrpcProcessor,
+        "da": DAProcessor,
     }
 
     num_labels_task = {
         "cola": 2,
         "mnli": 3,
         "mrpc": 2,
+        "da": 23,
     }
 
     if args.local_rank == -1 or args.no_cuda:
