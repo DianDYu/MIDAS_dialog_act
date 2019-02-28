@@ -154,7 +154,9 @@ class BERTDataset(Dataset):
         else:
             t2 = self.get_random_line()
             label = 1
-
+        while len(t2) == 0:
+            t2 = self.get_random_line()
+            label = 1
         assert len(t1) > 0
         assert len(t2) > 0
         return t1, t2, label
@@ -504,8 +506,8 @@ def main():
     if not args.do_train:
         raise ValueError("Training is currently the only implemented execution option. Please set `do_train`.")
 
-    if os.path.exists(args.output_dir) and os.listdir(args.output_dir):
-        raise ValueError("Output directory ({}) already exists and is not empty.".format(args.output_dir))
+    #if os.path.exists(args.output_dir) and os.listdir(args.output_dir):
+    #    raise ValueError("Output directory ({}) already exists and is not empty.".format(args.output_dir))
     if not os.path.exists(args.output_dir):
         os.makedirs(args.output_dir)
 
