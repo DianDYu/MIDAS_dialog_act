@@ -500,7 +500,7 @@ def main():
     num_labels = num_labels_task[task_name]
     label_list = processor.get_labels()
 
-    tokenizer = BertTokenizer.from_pretrained(args.bert_model, do_lower_case=args.do_lower_case)
+    tokenizer = BertTokenizer.from_pretrained("bert-base-uncased", do_lower_case=args.do_lower_case)
 
     train_examples = None
     num_train_optimization_steps = None
