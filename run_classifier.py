@@ -35,6 +35,9 @@ from pytorch_pretrained_bert.file_utils import PYTORCH_PRETRAINED_BERT_CACHE
 from pytorch_pretrained_bert.modeling import BertForSequenceClassification, BertConfig, WEIGHTS_NAME, CONFIG_NAME
 from pytorch_pretrained_bert.tokenization import BertTokenizer
 from pytorch_pretrained_bert.optimization import BertAdam, warmup_linear
+from collections import defaultdict
+
+error_dict = defaultdict(lambda: 0)
 
 logging.basicConfig(format = '%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
                     datefmt = '%m/%d/%Y %H:%M:%S',
@@ -170,15 +173,15 @@ class MnliProcessor(DataProcessor):
 class DAProcessor(DataProcessor):
     """Processor for the dialog act data set"""
 
-    def get_train_examples(self, data_dir):
+    def get_train_examples(self, data_dir, binary_pred):
         """See base class."""
         return self._create_examples(
-            os.path.join(data_dir, "train.txt"), "train")
+            os.path.join(data_dir, "train.txt"), "train", binary_pred)
 
-    def get_dev_examples(self, data_dir):
+    def get_dev_examples(self, data_dir, binary_pred):
         """See base class."""
         return self._create_examples(
-            os.path.join(data_dir, "dev.txt"), "dev")
+            os.path.join(data_dir, "dev.txt"), "dev", binary_pred)
 
     def get_labels(self):
         """See base class."""
@@ -197,7 +200,7 @@ class DAProcessor(DataProcessor):
 
         # return ['sd', 'b', 'bk', 'sv', 'aa', '%', '% -', 'ba', 'qy', 'ny', 'fc', 'qw', 'nn', 'h', 'qy^d', 'o', 'fo', 'bc', 'by', 'fw', 'bh', '^q', 'bf', 'na', 'ny^e', 'ad', '^2', 'b^m', 'qo', 'qh', '^h', 'ar', 'ng', 'nn^e', 'br', 'no', 'fp', 'qrr', 'arp', 'nd', 'oo', 'cc', 'co', 't1', 'bd', 'aap', 'am', '^g', 'qw^d', 'fa', 'ft', 'oqf', 'oqo', 'cm', 'cp', 'ns', 'bg', 'dad']
 
-    def _create_examples(self, filename, set_type):
+    def _create_examples(self, filename, set_type, binary_pred):
         """Creates examples for the training and dev sets."""
         examples = []
         with open(filename) as fp:
@@ -210,6 +213,8 @@ class DAProcessor(DataProcessor):
                 text_b = split_da[0].strip()
                 das = split_da[1].strip()
                 label_1 = das.split(";")[0].strip()
+                if binary_pred:
+                    label_1 = das
                 examples.append(
                     InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label_1))
             return examples
@@ -244,7 +249,7 @@ class ColaProcessor(DataProcessor):
         return examples
 
 
-def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer):
+def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer, binary_pred):
     """Loads a data file into a list of `InputBatch`s."""
 
     label_map = {label : i for i, label in enumerate(label_list)}
@@ -306,7 +311,13 @@ def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer
         assert len(input_mask) == max_seq_length
         assert len(segment_ids) == max_seq_length
 
-        label_id = label_map[example.label]
+        if binary_pred:
+            label_1 = example.label.split(";")[0].strip()
+            label_2 = example.label.split(";")[1].strip()
+            label_id = [label_map[i] for i in (label_1, label_2) if len(i) > 0]
+        else:
+            label_id = label_map[example.label]
+
         if ex_index < 5:
             logger.info("*** Example ***")
             logger.info("guid: %s" % (example.guid))
@@ -316,7 +327,11 @@ def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer
             logger.info("input_mask: %s" % " ".join([str(x) for x in input_mask]))
             logger.info(
                     "segment_ids: %s" % " ".join([str(x) for x in segment_ids]))
-            logger.info("label: %s (id = %d)" % (example.label, label_id))
+
+            if isinstance(label_id, list):
+                logger.info("label: %s (id = %s)" % (example.label, label_id))
+            else:
+                logger.info("label: %s (id = %d)" % (example.label, label_id))
 
         features.append(
                 InputFeatures(input_ids=input_ids,
@@ -429,6 +444,13 @@ def main():
     parser.add_argument('--fp16',
                         action='store_true',
                         help="Whether to use 16-bit float precision instead of 32-bit")
+    parser.add_argument('--binary_pred',
+                        action='store_true',
+                        help="Whether to use BCE for binary prediction instead of only one tag")
+    parser.add_argument('--binary_threshold',
+                        type=float,
+                        default=0.5,
+                        help="threshold for prediction")
     parser.add_argument('--loss_scale',
                         type=float, default=0,
                         help="Loss scaling to improve fp16 numeric stability. Only used when fp16 set to True.\n"
@@ -501,11 +523,12 @@ def main():
     label_list = processor.get_labels()
 
     tokenizer = BertTokenizer.from_pretrained("bert-base-uncased", do_lower_case=args.do_lower_case)
+    # tokenizer = BertTokenizer.from_pretrained(args.bert_model, do_lower_case=args.do_lower_case)
 
     train_examples = None
     num_train_optimization_steps = None
     if args.do_train:
-        train_examples = processor.get_train_examples(args.data_dir)
+        train_examples = processor.get_train_examples(args.data_dir, args.binary_pred)
         num_train_optimization_steps = int(
             len(train_examples) / args.train_batch_size / args.gradient_accumulation_steps) * args.num_train_epochs
         if args.local_rank != -1:
@@ -563,7 +586,7 @@ def main():
     tr_loss = 0
     if args.do_train:
         train_features = convert_examples_to_features(
-            train_examples, label_list, args.max_seq_length, tokenizer)
+            train_examples, label_list, args.max_seq_length, tokenizer, args.binary_pred)
         logger.info("***** Running training *****")
         logger.info("  Num examples = %d", len(train_examples))
         logger.info("  Batch size = %d", args.train_batch_size)
@@ -571,7 +594,22 @@ def main():
         all_input_ids = torch.tensor([f.input_ids for f in train_features], dtype=torch.long)
         all_input_mask = torch.tensor([f.input_mask for f in train_features], dtype=torch.long)
         all_segment_ids = torch.tensor([f.segment_ids for f in train_features], dtype=torch.long)
-        all_label_ids = torch.tensor([f.label_id for f in train_features], dtype=torch.long)
+
+        # label_id is a list of ids (len = 1 or 2)
+        # use float instead of long for BCE loss
+        if args.binary_pred:
+
+            def prepare_binary_tag(label_ids):
+                x = [0] * num_labels
+                for l_id in label_ids:
+                    x[l_id] = 1
+                # return torch.tensor(x, dtype=torch.float, device=device).view(-1, num_labels)
+                return x
+
+            all_label_ids = torch.tensor([prepare_binary_tag(f.label_id) for f in train_features], dtype=torch.float)
+        else:
+            all_label_ids = torch.tensor([f.label_id for f in train_features], dtype=torch.long)
+
         train_data = TensorDataset(all_input_ids, all_input_mask, all_segment_ids, all_label_ids)
         if args.local_rank == -1:
             train_sampler = RandomSampler(train_data)
@@ -580,13 +618,14 @@ def main():
         train_dataloader = DataLoader(train_data, sampler=train_sampler, batch_size=args.train_batch_size)
 
         model.train()
+        binary_pred = args.binary_pred
         for _ in trange(int(args.num_train_epochs), desc="Epoch"):
             tr_loss = 0
             nb_tr_examples, nb_tr_steps = 0, 0
             for step, batch in enumerate(tqdm(train_dataloader, desc="Iteration")):
                 batch = tuple(t.to(device) for t in batch)
                 input_ids, input_mask, segment_ids, label_ids = batch
-                loss = model(input_ids, segment_ids, input_mask, label_ids)
+                loss = model(input_ids, segment_ids, input_mask, label_ids, binary_pred)
                 if n_gpu > 1:
                     loss = loss.mean() # mean() to average on multi-gpu.
                 if args.gradient_accumulation_steps > 1:
@@ -629,16 +668,27 @@ def main():
     model.to(device)
 
     if args.do_eval and (args.local_rank == -1 or torch.distributed.get_rank() == 0):
-        eval_examples = processor.get_dev_examples(args.data_dir)
+        eval_examples = processor.get_dev_examples(args.data_dir, args.binary_pred)
         eval_features = convert_examples_to_features(
-            eval_examples, label_list, args.max_seq_length, tokenizer)
+            eval_examples, label_list, args.max_seq_length, tokenizer, args.binary_pred)
         logger.info("***** Running evaluation *****")
         logger.info("  Num examples = %d", len(eval_examples))
         logger.info("  Batch size = %d", args.eval_batch_size)
         all_input_ids = torch.tensor([f.input_ids for f in eval_features], dtype=torch.long)
         all_input_mask = torch.tensor([f.input_mask for f in eval_features], dtype=torch.long)
         all_segment_ids = torch.tensor([f.segment_ids for f in eval_features], dtype=torch.long)
-        all_label_ids = torch.tensor([f.label_id for f in eval_features], dtype=torch.long)
+
+        if args.binary_pred:
+            def prepare_binary_tag(label_ids):
+                x = [0] * num_labels
+                for l_id in label_ids:
+                    x[l_id] = 1
+                return x
+
+            all_label_ids = torch.tensor([prepare_binary_tag(f.label_id) for f in eval_features], dtype=torch.float)
+        else:
+            all_label_ids = torch.tensor([f.label_id for f in eval_features], dtype=torch.long)
+
         eval_data = TensorDataset(all_input_ids, all_input_mask, all_segment_ids, all_label_ids)
         # Run prediction for full data
         eval_sampler = SequentialSampler(eval_data)
@@ -647,6 +697,7 @@ def main():
         model.eval()
         eval_loss, eval_accuracy = 0, 0
         nb_eval_steps, nb_eval_examples = 0, 0
+        total_p, total_r, total_f1 = 0, 0, 0
  
         for input_ids, input_mask, segment_ids, label_ids in tqdm(eval_dataloader, desc="Evaluating"):
             input_ids = input_ids.to(device)
@@ -655,21 +706,55 @@ def main():
             label_ids = label_ids.to(device)
 
             with torch.no_grad():
-                tmp_eval_loss = model(input_ids, segment_ids, input_mask, label_ids)
-                logits = model(input_ids, segment_ids, input_mask)
+                tmp_eval_loss = model(input_ids, segment_ids, input_mask, label_ids, binary_pred=args.binary_pred)
+                logits = model(input_ids, segment_ids, input_mask, binary_pred=args.binary_pred)
 
-            logits = logits.detach().cpu().numpy()
-            label_ids = label_ids.to('cpu').numpy()
-            tmp_eval_accuracy = accuracy(logits, label_ids)
+            # print("size")
+            # print(logits.size())
+            # print(label_ids.size())
+            # print(label_ids)
+            # print()
 
-            eval_loss += tmp_eval_loss.mean().item()
-            eval_accuracy += tmp_eval_accuracy
+            if args.binary_pred:
+                for tgt_label, pred_da in zip(label_ids, logits):
+                    tgt_ids = []
+
+                    for i in np.nonzero(tgt_label).view(-1).data.cpu().numpy():
+                        tgt_ids.append(i)
+
+                    top_k_value, top_k_ind = torch.topk(pred_da, 2)
+                    top_id_data = []
+                    for k_value, k_ind in zip(torch.sigmoid(top_k_value).view(-1).data.cpu().numpy(),
+                                              top_k_ind.view(-1).data.cpu().numpy()):
+                        if k_value > args.binary_threshold:
+                            top_id_data.append(k_ind)
+                    if len(top_id_data) == 0:
+                        top_id_data.append(top_k_ind.view(-1).data.cpu().numpy()[0])
+
+                    p, r, f1 = get_F1_score(top_id_data, tgt_ids)
+                    total_p += p
+                    total_r += r
+                    total_f1 += f1
+
+
+            else:
+                logits = logits.detach().cpu().numpy()
+                label_ids = label_ids.to('cpu').numpy()
+                tmp_eval_accuracy = accuracy(logits, label_ids)
+
+                eval_loss += tmp_eval_loss.mean().item()
+                eval_accuracy += tmp_eval_accuracy
 
             nb_eval_examples += input_ids.size(0)
             nb_eval_steps += 1
 
         eval_loss = eval_loss / nb_eval_steps
-        eval_accuracy = eval_accuracy / nb_eval_examples
+
+        if args.binary_pred:
+            eval_accuracy = "p, r, f1: %.4f, %.4f, %.4f" % (total_p / nb_eval_examples,
+                                                            total_r / nb_eval_examples, total_f1 / nb_eval_examples)
+        else:
+            eval_accuracy = eval_accuracy / nb_eval_examples
         loss = tr_loss/nb_tr_steps if args.do_train else None
         result = {'eval_loss': eval_loss,
                   'eval_accuracy': eval_accuracy,
@@ -682,6 +767,41 @@ def main():
             for key in sorted(result.keys()):
                 logger.info("  %s = %s", key, str(result[key]))
                 writer.write("%s = %s\n" % (key, str(result[key])))
+
+        # for error_da in sorted(error_dict.items(), key=lambda kv: kv[1], reverse=True):
+        #     print(error_da)
+        # print(sorted(error_dict.items(), key=lambda kv: kv[1], reverse=True))
+
+
+def get_F1_score(pred_das, tgt_das):
+    true_pos = 0
+
+    for pred in pred_das:
+        if pred in tgt_das:
+            true_pos += 1
+
+    p = true_pos / len(pred_das)
+    r = true_pos / len(tgt_das)
+    if p == r == 0:
+        f1 = 0
+    else:
+        f1 = 2 * p * r / (p + r)
+
+
+    # pred_das_c = []
+    # for i in pred_das:
+    #     pred_das_c.append(str(i))
+    # tgt_das_c = []
+    # for i in tgt_das:
+    #     tgt_das_c.append(str(i))
+
+    # print(pred_das_c.sort())
+    # print(tgt_das_c.sort())
+    # if pred_das_c.sort() != tgt_das_c.sort():
+    # error = " ".join(pred_das_c) + " - " + " ".join(tgt_das_c)
+    # error_dict[error] += 1
+    return p, r, f1
+
 
 if __name__ == "__main__":
     main()
