@@ -45,6 +45,18 @@ logging.basicConfig(format = '%(asctime)s - %(levelname)s - %(name)s -   %(messa
 logger = logging.getLogger(__name__)
 
 
+NOTE_DA_MAP = {"sd": "statement", "b": "back-channeling", "sv": "opinion", "ny": "pos_answer", "%": "abandon",
+                       "ba": "appreciation",
+                       "qy": "yes_no_question", "fc": "closing", "ng": "neg_answer", "h": "other_answers", "o": "other",
+                       "sv": "opinion", "ad": "command", "^h": "hold", "cp": "complaint", "fp": "opening",
+                       "bd": "respond_to_apology",
+                       "fa": "apology", "ft": "thanking",
+                       "oqf": "open_question_factual", "oqo": "open_question_opinion", "cm": "comment",
+                       "ns": "nonsense", "dad": "dev_command"
+                       }
+da_lookup = list(NOTE_DA_MAP.values())
+dev_num = 1
+
 class InputExample(object):
     """A single training/test example for simple sequence classification."""
 
@@ -698,7 +710,8 @@ def main():
         eval_loss, eval_accuracy = 0, 0
         nb_eval_steps, nb_eval_examples = 0, 0
         total_p, total_r, total_f1 = 0, 0, 0
- 
+
+        dev_num_1 = 1
         for input_ids, input_mask, segment_ids, label_ids in tqdm(eval_dataloader, desc="Evaluating"):
             input_ids = input_ids.to(device)
             input_mask = input_mask.to(device)
@@ -731,7 +744,9 @@ def main():
                     if len(top_id_data) == 0:
                         top_id_data.append(top_k_ind.view(-1).data.cpu().numpy()[0])
 
-                    p, r, f1 = get_F1_score(top_id_data, tgt_ids)
+                    # print(dev_num_1)
+                    # dev_num_1 += 1
+                    dev_num_1, p, r, f1 = get_F1_score(top_id_data, tgt_ids, dev_num_1)
                     total_p += p
                     total_r += r
                     total_f1 += f1
@@ -770,10 +785,10 @@ def main():
 
         # for error_da in sorted(error_dict.items(), key=lambda kv: kv[1], reverse=True):
         #     print(error_da)
-        # print(sorted(error_dict.items(), key=lambda kv: kv[1], reverse=True))
+        print(sorted(error_dict.items(), key=lambda kv: kv[1], reverse=True))
 
 
-def get_F1_score(pred_das, tgt_das):
+def get_F1_score(pred_das, tgt_das, dev_num):
     true_pos = 0
 
     for pred in pred_das:
@@ -788,19 +803,28 @@ def get_F1_score(pred_das, tgt_das):
         f1 = 2 * p * r / (p + r)
 
 
-    # pred_das_c = []
-    # for i in pred_das:
-    #     pred_das_c.append(str(i))
-    # tgt_das_c = []
-    # for i in tgt_das:
-    #     tgt_das_c.append(str(i))
+    pred_das_c = []
+    for i in pred_das:
+        pred_das_c.append(da_lookup[int(i)])
+    tgt_das_c = []
+    for i in tgt_das:
+        tgt_das_c.append(da_lookup[int(i)])
 
-    # print(pred_das_c.sort())
-    # print(tgt_das_c.sort())
+    pred_das_c.sort()
+    tgt_das_c.sort()
+
     # if pred_das_c.sort() != tgt_das_c.sort():
-    # error = " ".join(pred_das_c) + " - " + " ".join(tgt_das_c)
-    # error_dict[error] += 1
-    return p, r, f1
+    # print(dev_num)
+    # dev_num += 1
+    # print(pred_das_c)
+    # print(tgt_das_c)
+    # print()
+    if pred_das_c != tgt_das_c:
+        error = " ".join(pred_das_c) + " - " + " ".join(tgt_das_c)
+        error_dict[error] += 1
+        if error == "opinion - abandon":
+            print(dev_num)
+    return dev_num+1, p, r, f1
 
 
 if __name__ == "__main__":
