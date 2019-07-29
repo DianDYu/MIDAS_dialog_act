@@ -3,7 +3,7 @@
 ### Dataset Preparation
 Example Input format in the including file folder ./da_data: 
 
-chatbot utterance : previous user utterance > current user utterance ## dialog act 1 of user utterance;dialog act 2 of user utterance;
+chatbot utterance : previous user utterance > current user utterance ## dialog act 1 of current user utterance;dialog act 2 of current user utterance
 
 EMPTY means that there is no previous user utterance and the current user utterance is the first utterance responding to the chatbot
 
@@ -14,6 +14,12 @@ Chatbot: did you know that?
 User: yes
 
 User: i did(dialog act: pos_answer)
+
+Another example dialog shown below can be formatted as : "do you want to hear some fun facts about cats instead : EMPTY > yes ## pos_answer;command". In this case, there is only current user utterance so the previous utterance is input as EMPTY
+
+Chatbot: do you want to hear some fun facts about cats instead
+
+User: yes(dialog act: pos_answer and command)
 
 ### Train and evaluate the act prediction model
 ```
