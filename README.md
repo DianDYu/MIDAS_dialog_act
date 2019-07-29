@@ -10,9 +10,7 @@ EMPTY means that there is no previous user utterance and the current user uttera
 For example the dialog below with user current utterance's dialog act annotated as pos_answer can be formatted as: "did you know that : yes > i did ## pos_answer;"
 
 Chatbot: did you know that?
-
 User: yes
-
 User: i did(dialog act: pos_answer)
 
 ### Train and evaluate the act prediction model
