@@ -1,6 +1,6 @@
 # dialog_act_bert
 
-### Dataset Preparation
+### Dataset preparation
 Example Input format in the including file folder ./da_data: 
 
 chatbot utterance : previous user utterance > current user utterance ## dialog act 1 of current user utterance;dialog act 2 of current user utterance
