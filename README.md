@@ -1,7 +1,7 @@
 # dialog_act_bert
 
 ### Dataset Preparation
-Example Input format in the including file ./da_data: 
+Example Input format in the including file folder ./da_data: 
 
 chatbot utterance : previous user utterance > current user utterance ## dialog act 1 of user utterance;dialog act 2 of user utterance;
 
@@ -10,7 +10,9 @@ EMPTY means that there is no previous user utterance and the current user uttera
 For example the dialog below with user current utterance's dialog act annotated as pos_answer can be formatted as: "did you know that : yes > i did ## pos_answer;"
 
 Chatbot: did you know that?
+
 User: yes
+
 User: i did(dialog act: pos_answer)
 
 ### Train and evaluate the act prediction model
