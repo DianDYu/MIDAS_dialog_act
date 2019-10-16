@@ -48,4 +48,4 @@ Note: The pretrained model "pytorch_model.bin" in the `output` dir is trained wi
 ```
 python run_classifier.py --data_dir da_data/ --bert_model output --task_name da --output_dir output --do_inference --binary_pred
 ```
-* --data_dir: the data directory where the customized inference data file is stored. By default, the inference data file is named as 'inference.txt'. A sample format of the inference data can be found in `da_data/inference.txt'.
+* --data_dir: the data directory where the customized inference data file is stored. By default, the inference data file is named as 'inference.txt'. A sample format of the inference data can be found in `da_data/inference.txt`.
