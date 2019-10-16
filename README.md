@@ -43,3 +43,9 @@ python run_classifier.py --data_dir da_data/ --bert_model output --task_name da 
 To use pretrained model, please download the model ["pytorch_model.bin"](https://drive.google.com/file/d/1ZaPncrWgBlUCV0ChNWzc6WN8WeVAv5Ql/view?usp=sharing) to the dir `output`.
 Note: The pretrained model "pytorch_model.bin" in the `output` dir is trained with BERT finetuned on human-machine conversational data using text as context.
 
+
+### Test MIDAS dialog act prediction model on customized data
+```
+python run_classifier.py --data_dir da_data/ --bert_model output --task_name da --output_dir output --do_inference --binary_pred
+```
+* --data_dir: the data directory where the customized inference data file is stored. By default, the inference data file is named as 'inference.txt'. A sample format of the inference data can be found in `da_data/inference.txt'.
