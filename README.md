@@ -1,4 +1,4 @@
-# MIDAS_dialog_act
+# MIDAS Dialog Act
 Implementation for the paper [MIDAS, A Dialog Act Annotation Scheme for Open-Domain Human-Machine Spoken Conversations](https://arxiv.org/abs/1908.10023). Implemented based on [Huggingface transformers](https://github.com/huggingface/transformers)
 
 
@@ -40,6 +40,6 @@ python run_classifier.py --data_dir da_data/ --bert_model bert-base-uncased --ta
 ```
 python run_classifier.py --data_dir da_data/ --bert_model output --task_name da --output_dir output --do_eval --binary_pred
 ```
-To use pretrained model, please download the model ["pytorch_model.bin"](https://drive.google.com/file/d/1ZaPncrWgBlUCV0ChNWzc6WN8WeVAv5Ql/view?usp=sharing) to the folder 'output'.
-Note: The pretrained model "pytorch_model.bin" in the output dir is trained with BERT finetuned on human-machine conversational data using text as context.
+To use pretrained model, please download the model ["pytorch_model.bin"](https://drive.google.com/file/d/1ZaPncrWgBlUCV0ChNWzc6WN8WeVAv5Ql/view?usp=sharing) to the dir `output`.
+Note: The pretrained model "pytorch_model.bin" in the `output` dir is trained with BERT finetuned on human-machine conversational data using text as context.
 
