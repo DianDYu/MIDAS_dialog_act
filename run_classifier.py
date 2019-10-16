@@ -194,11 +194,10 @@ class DAProcessor(DataProcessor):
         """See base class."""
         if not inference:
             return self._create_examples(
-                os.path.join(data_dir, "dev.txt"), "dev", binary_pred)
+               os.path.join(data_dir, "dev.txt"), "dev", binary_pred, inference)
         else:
             return self._create_examples(
-                os.path.join(data_dir, "inference.txt"), "dev", binary_pred)
-
+               os.path.join(data_dir, "inference.txt"), "dev", binary_pred, inference)
     def get_labels(self):
         """See base class."""
         # return ["oqf", "oqo", "qy", "ny", "ng", "h", "sd", "sv", "cm", "ad", "dad", "b",
@@ -701,7 +700,7 @@ def main():
         all_input_mask = torch.tensor([f.input_mask for f in eval_features], dtype=torch.long)
         all_segment_ids = torch.tensor([f.segment_ids for f in eval_features], dtype=torch.long)
 
-        if args.binary_pred:
+        if args.binary_pred and not args.do_inference:
             def prepare_binary_tag(label_ids):
                 x = [0] * num_labels
                 for l_id in label_ids:
@@ -734,7 +733,8 @@ def main():
             label_ids = label_ids.to(device)
 
             with torch.no_grad():
-                tmp_eval_loss = model(input_ids, segment_ids, input_mask, label_ids, binary_pred=args.binary_pred)
+                if not args.do_inference:
+                    tmp_eval_loss = model(input_ids, segment_ids, input_mask, label_ids, binary_pred=args.binary_pred)
                 logits = model(input_ids, segment_ids, input_mask, binary_pred=args.binary_pred)
 
             if args.binary_pred:
@@ -757,7 +757,7 @@ def main():
                         for pred_label in top_id_data:
                             inference_writter.write(label_list[pred_label] + ";")
                         inference_writter.write("\n")
-                    else args.do_eval:
+                    elif args.do_eval:
                         dev_num_1, p, r, f1 = get_F1_score(top_id_data, tgt_ids, dev_num_1)
                         total_p += p
                         total_r += r
@@ -833,8 +833,8 @@ def get_F1_score(pred_das, tgt_das, dev_num):
     if pred_das_c != tgt_das_c:
         error = " ".join(pred_das_c) + " - " + " ".join(tgt_das_c)
         error_dict[error] += 1
-        if error == "opinion - abandon":
-            print(dev_num)
+        #if error == "opinion - abandon":
+        #    print(dev_num)
     return dev_num+1, p, r, f1
 
 
