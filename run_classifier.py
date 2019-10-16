@@ -212,7 +212,7 @@ class DAProcessor(DataProcessor):
 
         # return ['sd', 'b', 'bk', 'sv', 'aa', '%', '% -', 'ba', 'qy', 'ny', 'fc', 'qw', 'nn', 'h', 'qy^d', 'o', 'fo', 'bc', 'by', 'fw', 'bh', '^q', 'bf', 'na', 'ny^e', 'ad', '^2', 'b^m', 'qo', 'qh', '^h', 'ar', 'ng', 'nn^e', 'br', 'no', 'fp', 'qrr', 'arp', 'nd', 'oo', 'cc', 'co', 't1', 'bd', 'aap', 'am', '^g', 'qw^d', 'fa', 'ft', 'oqf', 'oqo', 'cm', 'cp', 'ns', 'bg', 'dad']
 
-    def _create_examples(self, filename, set_type, binary_pred):
+    def _create_examples(self, filename, set_type, binary_pred, inference=False):
         """Creates examples for the training and dev sets."""
         examples = []
         with open(filename) as fp:
@@ -221,12 +221,17 @@ class DAProcessor(DataProcessor):
                 guid = "%s-%s" % (set_type, i)
                 text = line.split(">")
                 text_a = text[0].strip()
-                split_da = text[1].split("##")
-                text_b = split_da[0].strip()
-                das = split_da[1].strip()
-                label_1 = das.split(";")[0].strip()
-                if binary_pred:
-                    label_1 = das
+                if not inference:
+                    split_da = text[1].split("##")
+                    text_b = split_da[0].strip()
+                    das = split_da[1].strip()
+                    label_1 = das.split(";")[0].strip()
+                    if binary_pred:
+                        label_1 = das
+                else:
+                    text_b = text[1].strip()
+                    label_1 = "INFERENCE"
+                
                 examples.append(
                     InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label_1))
             return examples
@@ -261,7 +266,7 @@ class ColaProcessor(DataProcessor):
         return examples
 
 
-def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer, binary_pred):
+def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer, binary_pred, inference=False):
     """Loads a data file into a list of `InputBatch`s."""
 
     label_map = {label : i for i, label in enumerate(label_list)}
@@ -323,12 +328,15 @@ def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer
         assert len(input_mask) == max_seq_length
         assert len(segment_ids) == max_seq_length
 
-        if binary_pred:
-            label_1 = example.label.split(";")[0].strip()
-            label_2 = example.label.split(";")[1].strip()
-            label_id = [label_map[i] for i in (label_1, label_2) if len(i) > 0]
+        if not inference:
+            if binary_pred:
+                label_1 = example.label.split(";")[0].strip()
+                label_2 = example.label.split(";")[1].strip()
+                label_id = [label_map[i] for i in (label_1, label_2) if len(i) > 0]
+            else:
+                label_id = label_map[example.label]
         else:
-            label_id = label_map[example.label]
+            label_id = 0
 
         if ex_index < 5:
             logger.info("*** Example ***")
@@ -413,6 +421,9 @@ def main():
     parser.add_argument("--do_eval",
                         action='store_true',
                         help="Whether to run eval on the dev set.")
+    parser.add_argument("--do_inference",
+                        action='store_true',
+                        help="Whether to run inference on the test set.")
     parser.add_argument("--do_lower_case",
                         action='store_true',
                         help="Set this flag if you are using an uncased model.")
@@ -515,9 +526,6 @@ def main():
     torch.manual_seed(args.seed)
     if n_gpu > 0:
         torch.cuda.manual_seed_all(args.seed)
-
-    if not args.do_train and not args.do_eval:
-        raise ValueError("At least one of `do_train` or `do_eval` must be True.")
 
     if os.path.exists(args.output_dir) and os.listdir(args.output_dir) and args.do_train:
         raise ValueError("Output directory ({}) already exists and is not empty.".format(args.output_dir))
@@ -678,10 +686,10 @@ def main():
         model = BertForSequenceClassification.from_pretrained(args.bert_model, num_labels=num_labels)
     model.to(device)
 
-    if args.do_eval and (args.local_rank == -1 or torch.distributed.get_rank() == 0):
-        eval_examples = processor.get_dev_examples(args.data_dir, args.binary_pred)
+    if (args.do_eval or args.do_inference) and (args.local_rank == -1 or torch.distributed.get_rank() == 0):
+        eval_examples = processor.get_dev_examples(args.data_dir, args.binary_pred, inference=args.do_inference)
         eval_features = convert_examples_to_features(
-            eval_examples, label_list, args.max_seq_length, tokenizer, args.binary_pred)
+            eval_examples, label_list, args.max_seq_length, tokenizer, args.binary_pred, inference=args.do_inference)
         logger.info("***** Running evaluation *****")
         logger.info("  Num examples = %d", len(eval_examples))
         logger.info("  Batch size = %d", args.eval_batch_size)
@@ -710,6 +718,10 @@ def main():
         nb_eval_steps, nb_eval_examples = 0, 0
         total_p, total_r, total_f1 = 0, 0, 0
 
+        if args.do_inference:
+            output_inference_file = os.path.join(args.output_dir, "inference_results.txt")
+            inference_writter = open(output_inference_file, "w")
+
         dev_num_1 = 1
         for input_ids, input_mask, segment_ids, label_ids in tqdm(eval_dataloader, desc="Evaluating"):
             input_ids = input_ids.to(device)
@@ -720,12 +732,6 @@ def main():
             with torch.no_grad():
                 tmp_eval_loss = model(input_ids, segment_ids, input_mask, label_ids, binary_pred=args.binary_pred)
                 logits = model(input_ids, segment_ids, input_mask, binary_pred=args.binary_pred)
-
-            # print("size")
-            # print(logits.size())
-            # print(label_ids.size())
-            # print(label_ids)
-            # print()
 
             if args.binary_pred:
                 for tgt_label, pred_da in zip(label_ids, logits):
@@ -743,12 +749,14 @@ def main():
                     if len(top_id_data) == 0:
                         top_id_data.append(top_k_ind.view(-1).data.cpu().numpy()[0])
 
-                    # print(dev_num_1)
-                    # dev_num_1 += 1
-                    dev_num_1, p, r, f1 = get_F1_score(top_id_data, tgt_ids, dev_num_1)
-                    total_p += p
-                    total_r += r
-                    total_f1 += f1
+                    if args.do_inference:
+                        pass
+                        inference_writter.write(str(3))
+                    else args.do_eval:
+                        dev_num_1, p, r, f1 = get_F1_score(top_id_data, tgt_ids, dev_num_1)
+                        total_p += p
+                        total_r += r
+                        total_f1 += f1
 
 
             else:
@@ -775,12 +783,13 @@ def main():
                   'global_step': global_step,
                   }
 
-        output_eval_file = os.path.join(args.output_dir, "eval_results.txt")
-        with open(output_eval_file, "w") as writer:
-            logger.info("***** Eval results *****")
-            for key in sorted(result.keys()):
-                logger.info("  %s = %s", key, str(result[key]))
-                writer.write("%s = %s\n" % (key, str(result[key])))
+        if args.do_eval:
+            output_eval_file = os.path.join(args.output_dir, "eval_results.txt")
+            with open(output_eval_file, "w") as writer:
+                logger.info("***** Eval results *****")
+                for key in sorted(result.keys()):
+                    logger.info("  %s = %s", key, str(result[key]))
+                    writer.write("%s = %s\n" % (key, str(result[key])))
 
         #print("***** Error analysis *****")
         #print(sorted(error_dict.items(), key=lambda kv: kv[1], reverse=True))
