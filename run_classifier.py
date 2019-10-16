@@ -750,8 +750,9 @@ def main():
                         top_id_data.append(top_k_ind.view(-1).data.cpu().numpy()[0])
 
                     if args.do_inference:
-                        pass
-                        inference_writter.write(str(3))
+                        for pred_label in top_id_data:
+                            inference_writter.write(label_list[pred_label] + ";")
+                        inference_writter.write("\n")
                     else args.do_eval:
                         dev_num_1, p, r, f1 = get_F1_score(top_id_data, tgt_ids, dev_num_1)
                         total_p += p
@@ -764,26 +765,31 @@ def main():
                 label_ids = label_ids.to('cpu').numpy()
                 tmp_eval_accuracy = accuracy(logits, label_ids)
 
-                eval_loss += tmp_eval_loss.mean().item()
-                eval_accuracy += tmp_eval_accuracy
+                if args.do_inference:
+                    top_k_value, top_k_ind = torch.topk(logits, 1)
+                    inference_writter.write(label_list[top_k_ind + ";\n"])
+                else:
+                    eval_loss += tmp_eval_loss.mean().item()
+                    eval_accuracy += tmp_eval_accuracy
 
             nb_eval_examples += input_ids.size(0)
             nb_eval_steps += 1
 
         eval_loss = eval_loss / nb_eval_steps
 
-        if args.binary_pred:
-            eval_accuracy = "p, r, f1: %.4f, %.4f, %.4f" % (total_p / nb_eval_examples,
-                                                            total_r / nb_eval_examples, total_f1 / nb_eval_examples)
-        else:
-            eval_accuracy = eval_accuracy / nb_eval_examples
-        loss = tr_loss/nb_tr_steps if args.do_train else None
-        result = {'eval_loss': eval_loss,
-                  'eval_accuracy': eval_accuracy,
-                  'global_step': global_step,
-                  }
 
         if args.do_eval:
+            if args.binary_pred:
+                eval_accuracy = "p, r, f1: %.4f, %.4f, %.4f" % (total_p / nb_eval_examples,
+                                                                total_r / nb_eval_examples, total_f1 / nb_eval_examples)
+            else:
+                eval_accuracy = eval_accuracy / nb_eval_examples
+            loss = tr_loss/nb_tr_steps if args.do_train else None
+            result = {'eval_loss': eval_loss,
+                      'eval_accuracy': eval_accuracy,
+                      'global_step': global_step,
+                      }
+
             output_eval_file = os.path.join(args.output_dir, "eval_results.txt")
             with open(output_eval_file, "w") as writer:
                 logger.info("***** Eval results *****")
