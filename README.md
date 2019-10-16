@@ -1,4 +1,7 @@
-# dialog_act_bert
+# MIDAS_act_bert
+Implementation for the paper [MIDAS, A Dialog Act Annotation Scheme for Open-Domain Human-Machine Spoken Conversations](https://arxiv.org/abs/1908.10023). Implemented based on [Huggingface transformers](https://github.com/huggingface/transformers)
+
+
 
 ### Dataset preparation
 Example Input format in the including file folder ./da_data: 
@@ -26,7 +29,7 @@ User: yes(dialog act: pos_answer and command)
 python run_classifier.py --data_dir da_data/ --bert_model bert-base-uncased --task_name da --output_dir output --do_eval --binary_pred  --do_train
 ```
 * --data_dir: the data directory where training and evaluating data file is stored. By default, the training data file is named as 'train.txt', and the evaluating data file is named as 'dev.txt'
-* --bert_model: bert pre-trained model selected in the list: bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese
+* --bert_model: bert pre-trained model selected in the list: bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, or bert pretrained lm finetuned on dialog data
 * --task_name: the name of the task to train, for example da represents dialog act 
 * --output_dir: the output directory where the model predictions and checkpoints will be written
 * --do_eval: whether to evaluate on the evaluation file
