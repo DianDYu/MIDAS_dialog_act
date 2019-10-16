@@ -394,7 +394,6 @@ def main():
     parser.add_argument("--output_dir",
                         default=None,
                         type=str,
-                        required=True,
                         help="The output directory where the model predictions and checkpoints will be written.")
 
     ## Other parameters
@@ -774,7 +773,7 @@ def main():
         result = {'eval_loss': eval_loss,
                   'eval_accuracy': eval_accuracy,
                   'global_step': global_step,
-                  'loss': loss}
+                  }
 
         output_eval_file = os.path.join(args.output_dir, "eval_results.txt")
         with open(output_eval_file, "w") as writer:
@@ -783,9 +782,8 @@ def main():
                 logger.info("  %s = %s", key, str(result[key]))
                 writer.write("%s = %s\n" % (key, str(result[key])))
 
-        # for error_da in sorted(error_dict.items(), key=lambda kv: kv[1], reverse=True):
-        #     print(error_da)
-        print(sorted(error_dict.items(), key=lambda kv: kv[1], reverse=True))
+        #print("***** Error analysis *****")
+        #print(sorted(error_dict.items(), key=lambda kv: kv[1], reverse=True))
 
 
 def get_F1_score(pred_das, tgt_das, dev_num):
@@ -813,12 +811,6 @@ def get_F1_score(pred_das, tgt_das, dev_num):
     pred_das_c.sort()
     tgt_das_c.sort()
 
-    # if pred_das_c.sort() != tgt_das_c.sort():
-    # print(dev_num)
-    # dev_num += 1
-    # print(pred_das_c)
-    # print(tgt_das_c)
-    # print()
     if pred_das_c != tgt_das_c:
         error = " ".join(pred_das_c) + " - " + " ".join(tgt_das_c)
         error_dict[error] += 1
