@@ -1,5 +1,5 @@
 # MIDAS Dialog Act
-Implementation for the paper [MIDAS, A Dialog Act Annotation Scheme for Open-Domain Human-Machine Spoken Conversations](https://arxiv.org/abs/1908.10023). Implemented based on [Huggingface transformers](https://github.com/huggingface/transformers)
+Implementation for the paper [MIDAS, A Dialog Act Annotation Scheme for Open-Domain Human-Machine Spoken Conversations](https://arxiv.org/abs/1908.10023). The implementation is based on [Huggingface transformers](https://github.com/huggingface/transformers)
 
 
 
