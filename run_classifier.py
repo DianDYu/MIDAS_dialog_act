@@ -190,10 +190,14 @@ class DAProcessor(DataProcessor):
         return self._create_examples(
             os.path.join(data_dir, "train.txt"), "train", binary_pred)
 
-    def get_dev_examples(self, data_dir, binary_pred):
+    def get_dev_examples(self, data_dir, binary_pred, inference=False):
         """See base class."""
-        return self._create_examples(
-            os.path.join(data_dir, "dev.txt"), "dev", binary_pred)
+        if not inference:
+            return self._create_examples(
+                os.path.join(data_dir, "dev.txt"), "dev", binary_pred)
+        else:
+            return self._create_examples(
+                os.path.join(data_dir, "inference.txt"), "dev", binary_pred)
 
     def get_labels(self):
         """See base class."""
