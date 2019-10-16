@@ -1,5 +1,3 @@
-i think i heard wrong : EMPTY > top gun
-don't give up on me : EMPTY > i'm not giving up on you
 do you mind tell me one more time : EMPTY > who is the piano
 can you repeat the book name please : EMPTY > the dragons of eden 
 do you prefer to watch movies in the theater or at home : EMPTY > maybe a whole besides the big screen 
