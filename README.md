@@ -24,9 +24,9 @@ Chatbot: do you want to hear some fun facts about cats instead
 
 User: yes(dialog act: pos_answer and command)
 
-### Train and evaluate the act prediction model
+### Train and evaluate MIDAS dialog act prediction model
 ```
-python run_classifier.py --data_dir da_data/ --bert_model bert-base-uncased --task_name da --output_dir output --do_eval --binary_pred  --do_train
+python run_classifier.py --data_dir da_data/ --bert_model bert-base-uncased --task_name da --output_dir output --do_train --do_eval --binary_pred
 ```
 * --data_dir: the data directory where training and evaluating data file is stored. By default, the training data file is named as 'train.txt', and the evaluating data file is named as 'dev.txt'
 * --bert_model: bert pre-trained model selected in the list: bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, or bert pretrained lm finetuned on dialog data
@@ -35,3 +35,10 @@ python run_classifier.py --data_dir da_data/ --bert_model bert-base-uncased --ta
 * --do_eval: whether to evaluate on the evaluation file
 * --do_train: whether to run training
 * --binary_pred: whether to use Binary-Cross-Entropy for binary prediction instead of only one tag(in case of multi-dialog-act
+
+### Evaluate MIDAS dialog act prediction model
+```
+python run_classifier.py --data_dir da_data/ --bert_model output --task_name da --output_dir output --do_eval --binary_pred
+```
+The pretrained model "pytorch_model.bin" in the output dir is trained with BERT finetuned on human-machine conversational data using text as context.
+
