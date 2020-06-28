@@ -46,7 +46,7 @@ would you like to talk about a different or new topic : turn off the > let's cha
 i'm so excited to hear it : EMPTY > stop ## closing;
 do you still want to talk about movies : EMPTY > yes ## pos_answer;command
 what would you like to talk about : EMPTY > press ## opinion;
-do you still want to talk about leonard nimoy : EMPTY > let's talk about sex ## command;
+do you still want to talk about leonard nimoy : EMPTY > let's talk about trees ## command;
 do you prefer physical books or e-books : EMPTY > meow meow meow ## other;
 do you want to tell me your name : EMPTY > well ## hold;
 have you seen any movies recently : EMPTY > no ## neg_answer;
@@ -75,7 +75,7 @@ would you like you talk about golgo matsumoto instead of our current topic : EMP
 can we talk about some other topics : no news > please ## pos_answer;
 what's your favorite part in that book : EMPTY > when he found a car ## opinion;
 what's the name of your favorite movie : i don't know > i don't really have a favorite movie ## other_answers;
-what would it be : EMPTY > tell me about the cock of the rock ## command;opinion
+what would it be : EMPTY > tell me about the rock of the rock ## command;opinion
 maybe we should talk about something more interesting : EMPTY > maybe you should stop talking about that ## complaint;
 have you ever tried to guess someone else's password so many times that it locked their account : EMPTY > no ## neg_answer;
 what movie do you like : EMPTY > the dark knight ## opinion;
@@ -92,7 +92,7 @@ but i think the trick is to set a limit and keep an eye out for bargains : when 
 did you like that : EMPTY > yeah ## pos_answer;
 what do you think : do a best movie ever > what do you mean ## open_question_factual;
 what do you think : EMPTY > no ## neg_answer;
-do you want to tell me your name : EMPTY > mandolin ## statement;
+do you want to tell me your name : EMPTY > jack ## statement;
 shooter : EMPTY > strategy ## opinion;
 well that was an interesting read : yes > it was ## comment;
 alright : EMPTY > why can't you talk to me ## open_question_opinion;
@@ -153,7 +153,7 @@ what's the name of your favorite movie : EMPTY > i have to say jurassic world ##
 jiminy cricket i'd rather talk about something else : EMPTY > i'd rather discuss speaking laugh ## command;opinion
 and it sort of felt like the phone was breaking up with both of you : EMPTY > no ## neg_answer;
 what would you like to talk about : alexus > i'm how we filter snatch ## opinion;
-we can talk about something else as well : EMPTY > do you know how to give a blow job ## yes_no_question;
+we can talk about something else as well : EMPTY > do you know how to teach classes ## yes_no_question;
 and important : EMPTY > keep talking ## command;
 do you want to talk about another video game : EMPTY > yes ## pos_answer;command
 have you ever marveled at how someone you thought was so ordinary could suddenly become so beautiful : EMPTY > sure ## pos_answer;
@@ -215,7 +215,7 @@ do you want to tell me your name : EMPTY > karen ## statement;
 what is your least favorite type of music : EMPTY > okay tree ## opinion;
 did you know that : EMPTY > tell me what you think of google ## command;
 do you want to know some of these things : EMPTY > yes ## pos_answer;command
-what's your name : EMPTY > julian miles ## statement;
+what's your name : EMPTY > julian ## statement;
 do you want to talk about another video game : yes > sure ## pos_answer;
 what book genre is your favorite : EMPTY > oh ## hold;
 don't you think so : EMPTY > who is a pretty interesting ## open_question_factual;
@@ -354,7 +354,7 @@ have you been there : EMPTY > yes ## pos_answer;
 can you believe that : EMPTY > alexa stop ## closing;
 what would it be : EMPTY > i'll be to make it really better ## opinion;
 do you want to tell me your name : EMPTY > hi again ## statement;
-what's the name of your favorite book : EMPTY > play the butt ## opinion;
+what's the name of your favorite book : EMPTY > antifragile ## opinion;
 what do you think is the best acting performance of all time : wow > that's a tough question ## comment;
 can you believe that : EMPTY > i did not know that ## neg_answer;statement
 i haven't thought about that before : EMPTY > you know ## hold;
@@ -420,7 +420,7 @@ cats are great pets : yes > they are ## comment;
 what genre of music are you into : EMPTY > stop ## closing;
 what would you imagine to celebrate on world tourism day : EMPTY > five ## abandon;
 do you want to tell me your name : EMPTY > no ## neg_answer;
-i haven't thought about that before : EMPTY > can i stick my penis in you ## yes_no_question;
+i haven't thought about that before : EMPTY > can i tell you something ## yes_no_question;
 do you want to tell me your name : EMPTY > my name is sally ## statement;
 what pet do you have : i'd rather not say > what did i have to look it ## statement;
 just say stop : EMPTY > tell us a cow joke ## command;
@@ -447,7 +447,7 @@ what book genre is your favorite : i don't have a favorite one > i like them all
 do you still want to continue our conversation about movies : EMPTY > no ## neg_answer;command
 who's your favorite author : EMPTY > stop conversation ## closing;
 can you repeat the book name please : yes > the unmaking engine ## opinion;
-anything came across your mind : that's fucking awesome > tell me more ## command;
+anything came across your mind : that's awesome > tell me more ## command;
 which teams do you think are the favorites for super bowl 2019 : EMPTY > redskins and patriots ## opinion;
 do you like to go to new places : EMPTY > yes ## pos_answer;
 which teams do you think are the favorites for super bowl 2019 : EMPTY > los_angeles rams ## opinion;
@@ -571,7 +571,7 @@ is it what you're looking for : EMPTY > no ## neg_answer;
 what kind of music are you into : EMPTY > i like country ## opinion;
 what do you want to talk about : EMPTY > alexa stop ## closing;
 don't you think so : very much > so ## pos_answer;
-do you want to tell me your name : EMPTY > my name is deb ## statement;
+do you want to tell me your name : EMPTY > my name is tom ## statement;
 who's your favorite actor or actress : EMPTY > what do you remember bruce campbell ## open_question_factual;
 just say stop : EMPTY > stop ## closing;
 where was the last place you traveled : EMPTY > i don't remember ## other_answers;
@@ -618,7 +618,7 @@ can you please say the movie name again : EMPTY > a. i. ## opinion;
 what do you think is the best acting performance of all time : snowman actor in it > harry ## opinion;
 isn't that interesting : EMPTY > yes ## pos_answer;
 can you say that one more time : EMPTY > poop ## command;statement
-do you want to tell me your name : EMPTY > my name is lindsay ## statement;
+do you want to tell me your name : EMPTY > my name is linda ## statement;
 i'm so excited to hear it : EMPTY > the longest book i've probably ever read was bread givers ## statement;
 which character in that book would you most like to meet in real life : just not really big characters > i want to see ## opinion;
 wanna know a fun fact about it : EMPTY > yeah ## pos_answer;command
@@ -656,7 +656,7 @@ do you like to read : EMPTY > no ## neg_answer;
 what do you think is the best acting performance of all time : EMPTY > his way of technology and events again ## comment;
 what would you like to talk about : EMPTY > obscure holidays ## command;opinion
 who's your favorite actor or actress : EMPTY > the rock ## opinion;
-do you want to tell me your name : EMPTY > my name is sharon ## statement;
+do you want to tell me your name : EMPTY > my name is olivia ## statement;
 i think i would like to be a sea sponge and live in a pineapple under the sea : EMPTY > why ## open_question_opinion;
 they scare my creators too : EMPTY > that's funny ## appreciation;
 and i love to read when i'm not chatting : EMPTY > can you read me a story ## command;yes_no_question
@@ -668,7 +668,7 @@ do you ever watch documentaries : about people there stories > yes ## pos_answer
 isn't that interesting : yeah > it is ## pos_answer;
 would you like you talk about aaliyah instead of our current topic : EMPTY > let's talk about food ## command;
 i definitely recommend it : EMPTY > can you play it ## yes_no_question;
-perhaps i've seen it : EMPTY > back door sluts nine ## opinion;
+perhaps i've seen it : EMPTY > back door ## opinion;
 what's your favorite movie with ariana grande : EMPTY > tv shows ## opinion;
 have you seen any good movies recently : EMPTY > yeah ## pos_answer;
 what do you want to talk about : EMPTY > movies ## command;opinion
@@ -729,7 +729,7 @@ how did watching that movie make you feel : that was fine > i'm sorry if i was r
 don't you think so : EMPTY > sometimes ## pos_answer;
 do you want to tell me your name : EMPTY > hi ## opening;
 would you like to hear more : EMPTY > yes ## pos_answer;command
-is there something else you'd like to chat about : EMPTY > alexa shut the fuck up ## closing;
+is there something else you'd like to chat about : EMPTY > alexa shut up ## closing;
 have you seen any movies recently : EMPTY > what about casablanca ## command;yes_no_question
 well ohhh kay i need a few breths : EMPTY > okay ## back-channeling;
 what's a book you would recommend to me : EMPTY > nineteen eighty four ## opinion;
@@ -824,7 +824,7 @@ do you want to talk about music : yes > what do you know about other mozart ## c
 what would you like to talk about : EMPTY > did you say you could talk about books ## yes_no_question;
 what's the name of your favorite book : EMPTY > kyrie and that in the tv and slayer ## opinion;
 i just like it : EMPTY > what can't cows go downstairs ## open_question_factual;
-what would you like to talk about : EMPTY > i would like to know the meaning of bullshit ## command;opinion
+what would you like to talk about : EMPTY > i would like to know the meaning of life ## command;opinion
 just tell me the name of a movie you want me to talk about : EMPTY > i gotta go to work ## statement;
 could you tell me more about what you're looking for : EMPTY > flash news in a minute ## command;statement
 did you know that : EMPTY > no ## neg_answer;
@@ -914,7 +914,7 @@ would you like to hear more : EMPTY > yes ## pos_answer;command
 but i think his skills and championship mentality are incredible : EMPTY > i agree with you ## opinion;
 do you think this study is helpful : EMPTY > yes ## pos_answer;
 do you prefer to watch movies in the theater or at home : at home > and i also love seeing eye in movies too ## opinion;
-do you want to tell me your name : EMPTY > testicles ## statement;
+do you want to tell me your name : EMPTY > tom ## statement;
 what movie do you like : the dark knight > so tell me ## command;
 have you heard about this : no > must be funny ## comment;
 do you want to hear more : EMPTY > no ## neg_answer;command
@@ -945,7 +945,7 @@ they scare my creators too : EMPTY > what kind of bugs ## open_question_factual;
 army reserves : EMPTY > that's crazy ## comment;
 i will be smarter if you can teach me : first of all you need to make a new ice cream > flavored called chicken ## statement;
 do you want to tell me your name : EMPTY > greg ## statement;
-do you want to tell me your name : EMPTY > my name is maisy ## statement;
+do you want to tell me your name : EMPTY > my name is missy ## statement;
 cats are great pets : EMPTY > what did you ## abandon;
 would you like you talk about william hurt instead of our current topic : EMPTY > no ## neg_answer;command
 have you ever had a pet : actually > i have tons right now ## pos_answer;
@@ -962,7 +962,6 @@ did you know that : EMPTY > i didn't ## neg_answer;statement
 would you like to hear more : EMPTY > sure ## pos_answer;command
 dogs are great pets : EMPTY > i know ## back-channeling;
 do you want to keep talking about music : what > repeat ## command;
-do you want to tell me your name : EMPTY > fuck off ## complaint;
 i think that the idea of solo travel is both exciting and scary : yeah > cause i'm only eight years old and i don't want to go alone ## opinion;
 what character do you feel is most similar to you in that book : EMPTY > the train he could ## abandon;
 do you watch movies : EMPTY > i love to watch movies ## opinion;
@@ -986,7 +985,7 @@ do you wanna hear more things like this : EMPTY > we can stop chatting now ## cl
 do you want to tell me your name : EMPTY > sometimes i am siri ## statement;
 would you mind telling me more : candy > corn to good game ## opinion;
 who's your favorite author : EMPTY > doctor seuss ## opinion;
-what's your name : EMPTY > liddell owens ## statement;
+what's your name : EMPTY > linda ## statement;
 what would it be : more books about how to > how do you ## abandon;
 what pet do you have : EMPTY > fish ## statement;
 have you ever had a pet : EMPTY > yes ## pos_answer;
@@ -1012,7 +1011,7 @@ any thoughts : EMPTY > no ## neg_answer;
 it will be a good series : EMPTY > stop ## closing;
 wanna know something interesting about it : EMPTY > no ## neg_answer;command
 don't you think so : EMPTY > yes ## pos_answer;
-would you like to know more : EMPTY > fuck yes ## pos_answer;command
+would you like to know more : EMPTY > yes ## pos_answer;command
 who's your favorite actor or actress : EMPTY > chuck connors ## opinion;
 i love the way she writes and sings her songs about her ex-boyfriends : EMPTY > that's cool ## appreciation;
 which character in that book would you most like to meet in real life : EMPTY > my favorite book is dork diaries ## opinion;
@@ -1052,9 +1051,9 @@ period : well > i guess that's true ## comment;
 what would you like to talk about : EMPTY > sports ## command;opinion
 do you prefer playing alone or with friends : EMPTY > with friends ## opinion;
 just say stop : EMPTY > stop ## closing;
-can you say that one more time : EMPTY > my name is paul and refills with me today ## statement;
+can you say that one more time : EMPTY > my name is jesse and refills with me today ## statement;
 do you want to tell me your name : EMPTY > it doesn't hear me ## statement;
-do you want to tell me your name : hi > my name is anika ## statement;
+do you want to tell me your name : hi > my name is tom ## statement;
 i'm so excited to hear it : nothing > i'm talking to you ## statement;
 have you seen any good movies recently : EMPTY > yes ## pos_answer;
 do you want to continue our chat on movies : yes > please ## command;
@@ -1115,7 +1114,7 @@ what do you want to talk about : EMPTY > animals ## command;opinion
 what would you like to know more about : EMPTY > babies ## command;statement
 so we had to find a substitute nanny instantly : no > i'm talking about ## statement;
 which mascot is the best in m l b : EMPTY > no ## neg_answer;
-do you want to tell me your name : yeah > my name is cody ## statement;
+do you want to tell me your name : yeah > my name is kobe ## statement;
 any thoughts : no > i want you to start talking to eat ## command;
 do you want more like these : and oh my gosh > that's so small ## comment;
 do you prefer to watch movies in the theater or at home : EMPTY > at home ## opinion;
@@ -1232,7 +1231,7 @@ maybe i know it : EMPTY > re ask that question ## complaint;
 where was the last place you traveled : okay > i think you're misguided ## opinion;
 what do you want to talk about : hey > amazon ## command;statement
 don't you think that's cool : EMPTY > yeah ## pos_answer;
-do you want to tell me your name : EMPTY > luis and sully ## statement;
+do you want to tell me your name : EMPTY > luis ## statement;
 what do you want to talk about : EMPTY > hamilton ## opinion;
 what pet do you have : EMPTY > alexa stop ## closing;
 how much time do you spend listening to music each day or week : EMPTY > per day ## statement;
@@ -1261,8 +1260,8 @@ what would it be : EMPTY > amazon stop ## closing;
 what do you want to talk about : EMPTY > animals ## command;opinion
 what pet do you have : EMPTY > i cat ## statement;
 do you prefer playing alone or with friends : EMPTY > i prefer friends ## opinion;
-did you mean the movie my name is gulpilil : EMPTY > no ## neg_answer;
-do you want to tell me your name : sure > gary smith ## statement;
+did you mean the movie my name is bill : EMPTY > no ## neg_answer;
+do you want to tell me your name : sure > gary ## statement;
 do you want to continue our chat on movies : EMPTY > yes ## pos_answer;command
 how did watching that movie make you feel : EMPTY > yeah ## back-channeling;
 but i'm not sure i have an answer to that : EMPTY > afternoon ## abandon;
@@ -1270,7 +1269,7 @@ have you read any good books recently : toes > it's about a cat with seven toast
 what movie genre do you enjoy the most : EMPTY > i love memento ## opinion;
 and i'm thinking that chicken tikka masala : EMPTY > i like shrimp ## opinion;
 what do you think you've learned from traveling : and even if you don't like the place > you can still have fun either way ## opinion;
-do you want to tell me your name : EMPTY > my name is jody ## statement;
+do you want to tell me your name : EMPTY > my name is kevin ## statement;
 what would it be : EMPTY > why they don't talk english ## open_question_factual;
 have you ever marveled at how someone you thought was so ordinary could suddenly become so beautiful : EMPTY > yes ## pos_answer;
 tell me about your dream vacation : wanna live in one of those house thingies and > and i'm gonna go swimming with the fishes ## opinion;
@@ -1289,7 +1288,7 @@ what movie do you like : EMPTY > bang ## opinion;
 what would you like to talk about : EMPTY > movies ## command;opinion
 young teams like rams and juguars are also expected to bring up some challenges to the strong teams : EMPTY > yeah ## back-channeling;
 do you ever watch documentaries : EMPTY > yes ## pos_answer;
-do you want to tell me your name : EMPTY > just anthony ## statement;
+do you want to tell me your name : EMPTY > anthony ## statement;
 when do you listen to music : EMPTY > michael jackson ## command;statement
 do you listen to a lot of music : EMPTY > yeah ## pos_answer;
 do you want to tell me your name : EMPTY > yes ## pos_answer;
@@ -1352,7 +1351,7 @@ perhaps i've seen it : EMPTY > what can i do you ## open_question_factual;
 how about you ask me something else : EMPTY > pete the cat ## statement;
 hitler sued cranston for copyright violation : EMPTY > i'd like to read that ## opinion;
 it is a fun and sometimes restful day : yeah > bye ## closing;
-do you want to tell me your name : EMPTY > my name is fulton ## statement;
+do you want to tell me your name : EMPTY > my name is jessica ## statement;
 do you prefer movies or television : EMPTY > yes ## pos_answer;
 do you still want to continue our conversation about movies : EMPTY > yes ## pos_answer;command
 do you like to read a lot of books : EMPTY > yes ## pos_answer;
@@ -1483,9 +1482,9 @@ keep her as your friend and move on : EMPTY > so ## abandon;
 have you seen any good movies recently : no > but we can stop now ## closing;
 can you believe that : EMPTY > yeah ## pos_answer;
 do you like to browse in book shops : EMPTY > what's the what does blah is mean ## open_question_factual;
-do you want to tell me your name : EMPTY > kaitlyn ## statement;
+do you want to tell me your name : EMPTY > kate ## statement;
 do you enjoy traveling : EMPTY > yeah ## pos_answer;
-do you want to tell me your name : EMPTY > my name is troy ## statement;
+do you want to tell me your name : EMPTY > my name is ted ## statement;
 i love hearing what you have to say : EMPTY > can you be a jones ## yes_no_question;
 what would you like to talk about : EMPTY > movies ## command;opinion
 do you think people read more or less books now than they did 50 years ago : EMPTY > less ## opinion;
@@ -1587,7 +1586,7 @@ what title might you choose : is it okay > forget about that ## statement;
 what movie genre do you enjoy the most : EMPTY > alexa ## opinion;
 who is your favorite artist : EMPTY > leaped sibling ## opinion;
 and i'm thinking that eqaa : EMPTY > what's wrong with you ## complaint;
-do you want to tell me your name : my name's richard > but you can call me dick ## statement;
+do you want to tell me your name : my name's william > but you can call me bill ## statement;
 tell me the name of a movie that you want to discuss : marvel's infinity > avenger wars ## command;statement
 and i answered that i swear if i dream about fire tonight : EMPTY > stop ## closing;
 would you say that internet controlled devices make life easier : EMPTY > how do you hack ## open_question_factual;
@@ -1806,7 +1805,7 @@ can you believe that : EMPTY > wow ## back-channeling;
 do you want to talk about it : EMPTY > yes ## pos_answer;command
 can you believe that : EMPTY > no ## neg_answer;
 do you want to hear more : EMPTY > yes ## pos_answer;command
-do you want to tell me your name : EMPTY > my name is richard ## statement;
+do you want to tell me your name : EMPTY > my name is william ## statement;
 what about this book most appealed to you : EMPTY > i just like it because my dog's name heat ## opinion;
 what's the name of your favorite movie : EMPTY > my favorite movie is ## abandon;
 do you like tourist activities or do you prefer to explore the local life : EMPTY > local ## opinion;
@@ -1819,7 +1818,7 @@ i'll give you the benefit of the doubt and forget you ever said that : EMPTY > w
 i have never tried swimming : EMPTY > are you afraid of water well water hurt you ## yes_no_question;
 i haven't thought about that before : what can i call you > lex ## statement;
 have you seen any movies recently : EMPTY > not really ## neg_answer;
-what do you think : it was great > i don't know why people were complaining about it and racist ## statement;
+what do you think : it was great > i don't know why people were complaining about it ## statement;
 are you scared of any animals : EMPTY > a lot of them ## pos_answer;statement
 moo : you're right > you're bad at it ## statement;
 do you still want to continue our conversation about movies : EMPTY > yes ## pos_answer;command
@@ -1853,7 +1852,6 @@ and i love to read when i'm not chatting : EMPTY > no ## neg_answer;
 what is your least favorite type of music : EMPTY > shut up ## closing;
 do you watch movies : EMPTY > bye ## closing;
 perhaps i've seen it : EMPTY > have you seen phantom of the disco ## yes_no_question;
-which mascot is the best in m l b : hey > bastion bitch ## complaint;
 the 1990 film teenage mutant ninja turtles with april o'neal played by judith hoag : EMPTY > yeah ## pos_answer;
 want to chat about psychology : EMPTY > yes ## pos_answer;command
 have you heard it : EMPTY > yes ## pos_answer;
@@ -1887,7 +1885,7 @@ just let me know with either a yes or a no : EMPTY > yes ## pos_answer;
 do you watch movies : EMPTY > stop alexa ## closing;
 do you think people read more or less books now than they did 50 years ago : EMPTY > yeah ## pos_answer;
 do you want to tell me your name : EMPTY > my name is sue ## statement;
-how about you ask me something else : EMPTY > my name is conrad ## statement;
+how about you ask me something else : EMPTY > my name is kent ## statement;
 isn't that interesting : EMPTY > yes ## pos_answer;
 let's see if i know it : EMPTY > the avengers ## opinion;
 where do you plan to travel next : EMPTY > it was on a ## abandon;
@@ -1900,7 +1898,7 @@ i never had pets but i have always wondered what it feels like to have one : EMP
 isn't that interesting : EMPTY > yes ## pos_answer;
 i am listening to music : EMPTY > me too ## opinion;
 any thoughts : that's really interesting > i'm must be in a really complicated ## opinion;
-it got me think that is this why we get brown spots as we age lol : EMPTY > you're fucking dumb ## complaint;
+it got me think that is this why we get brown spots as we age lol : EMPTY > you're dumb ## complaint;
 wow  i never had pets but i have always wondered what it feels like to have one : it's nice > i have a cat and a dog ## statement;
 don't give up on me : EMPTY > happy and a little bit confused ## comment;
 how often do you play overwatch : EMPTY > i don't ## other_answers;
@@ -1960,7 +1958,7 @@ do you like to read a lot of books : yes > i do ## pos_answer;
 panoramic views london and madame tussauds london : EMPTY > who ## abandon;
 any thoughts : i always tell > people is that you can watching right back to back ## statement;
 have you ever been to a zoo : EMPTY > no ## neg_answer;
-do you want to tell me your name : EMPTY > forest ## statement;
+do you want to tell me your name : EMPTY > jerry ## statement;
 what do you think : EMPTY > very cool ## appreciation;
 do you want to talk about another video game : amazon > no ## neg_answer;
 would you like to hear more : EMPTY > yes ## pos_answer;command
@@ -1999,7 +1997,7 @@ can you believe that : yeah > i got ## pos_answer;statement
 would you like to talk about it now : EMPTY > i would like to talk about video game companies ## command;
 and other members of the cuckhold horde who are 100% powerless to stop his nomination : EMPTY > a hundred percent ## yes_no_question;
 just tell me the name of a book you want me to talk about : okay > alexa ## abandon;
-do you want to tell me your name : yes > my name is ray is ## statement;
+do you want to tell me your name : yes > my name is jerry is ## statement;
 i don't have kids : EMPTY > yes ## back-channeling;
 what pet do you have : EMPTY > a dog ## statement;
 did you know that : i don't know that > who is right this screen pretty ## nonsense;
@@ -2094,9 +2092,9 @@ like movies : EMPTY > spider man ## command;statement
 can you tell me even more : there is a story mode > and if you beat that ## statement;
 just say stop : EMPTY > stop ## closing;
 do you prefer physical books or e-books : EMPTY > physical books ## opinion;
-what is your favorite team in the nhl : EMPTY > i don't have one a dick ## other_answers;
+what is your favorite team in the nhl : EMPTY > i don't have one ## other_answers;
 wanna know a fun fact about it : EMPTY > do you know any jewish holidays ## command;yes_no_question
-perhaps i've seen it : what's your balls > chicken nugget ## statement;
+perhaps i've seen it : what's yours > chicken nugget ## statement;
 have you seen any movies recently : EMPTY > do you know who you are talking to ## yes_no_question;
 what do you want to talk about : EMPTY > what's your name ## open_question_factual;
 hope you like it : EMPTY > okay ## back-channeling;
@@ -2122,7 +2120,7 @@ cats are great pets : EMPTY > yes ## back-channeling;
 i am tired of the smell of cheese and pepperonni : EMPTY > i like pizza ## opinion;
 what's your favorite movie with michael myers : EMPTY > any of the awesome power movies ## opinion;
 which character in the movie would you most like to meet in real life : EMPTY > creator of the black lagoon ## opinion;
-do you mind telling me what you think : EMPTY > i think it's rubbish and poppy cock ## comment;
+do you mind telling me what you think : EMPTY > i think it's rubbish ## comment;
 do you still want to continue our conversation about movies : EMPTY > yes ## pos_answer;command
 did you know october was also winterfylleth ____ a time of year to celebrate the beginning of winter which begins after a fylleth or full moon : EMPTY > no ## complaint;
 it's coming soon : EMPTY > what is it about ## open_question_factual;
@@ -2136,7 +2134,7 @@ what movies are you looking forward to watching in the future : EMPTY > incredib
 what kind of music are you into : EMPTY > pop ## opinion;
 can you believe that : EMPTY > yes ## pos_answer;
 what song made you cry : tell us with > but talk about the boyfriend ## command;
-do you want to tell me your name : EMPTY > my name is carie ## statement;
+do you want to tell me your name : EMPTY > my name is claire ## statement;
 isn't this interesting : EMPTY > yes ## pos_answer;
 do you wanna hear more things like this : yes > well ## hold;
 how much of a fan are you of christopher nolan : i guess > a six ## opinion;
@@ -2236,9 +2234,9 @@ could you say that again : EMPTY > i think that it's great because that was the 
 any thoughts : that was a very interesting thing > i like minority report ## opinion;
 let's see if i know it : EMPTY > that's cool ## appreciation;
 can you please repeat that : EMPTY > hotel transylvania ## opinion;
-do you want to tell me your name : EMPTY > brent ## statement;
+do you want to tell me your name : EMPTY > ben ## statement;
 do you mind telling me what you think : EMPTY > i'm trying to ask you what that soccer player did that intrigued you so much ## open_question_opinion;
-do you want to tell me your name : my name is mulaney > ruth decker ## statement;
+do you want to tell me your name : my name is tom > ruth decker ## statement;
 did you know that : EMPTY > no ## neg_answer;
 who's your favorite actor or actress : EMPTY > mel gibson ## opinion;
 any thoughts : EMPTY > no ## neg_answer;
@@ -2382,11 +2380,11 @@ what would you like to talk about : EMPTY > dogs ## opinion;
 maybe i know it : EMPTY > robert de niro ## opinion;
 miller as gene voice : no > i did not know that ## statement;
 that's pretty cool right : EMPTY > yes ## pos_answer;
-what reasons do you think lead to its nation-wide popularity : EMPTY > my name is conrad ## statement;
+what reasons do you think lead to its nation-wide popularity : EMPTY > my name is jack ## statement;
 would you like you talk about grant gustin instead of our current topic : EMPTY > yes ## pos_answer;command
 and can mimic human voices : EMPTY > i like dogs ## opinion;
 do you prefer fiction or nonfiction books : EMPTY > i prefer fiction ## opinion;
-anything came across your mind : i never thought of that > that's fucking awesome ## appreciation;
+anything came across your mind : i never thought of that > that's awesome ## appreciation;
 what's the name of your favorite movie : EMPTY > what's the name of your favorite movie and my favorite movie is it ## open_question_opinion;
 what is your favorite part when you watch a football game : EMPTY > yes ## pos_answer;
 do you want to talk about another video game : EMPTY > sure ## pos_answer;command
@@ -2436,7 +2434,7 @@ have you ever had a pet : yes > i have a pet ## statement;
 but i'm not sure i have an answer to thatwhere was the last place that you traveled : EMPTY > no ## complaint;
 alicedo you ever watch sports : EMPTY > only tennis ## other_answers;
 i guess my creators have some weird taste : EMPTY > you ## abandon;
-do you want to tell me your name : EMPTY > my name is chance ## statement;
+do you want to tell me your name : EMPTY > my name is cam ## statement;
 they got married in december : EMPTY > okay ## back-channeling;
 and i love to read when i'm not chatting : EMPTY > wow ## back-channeling;
 i cannot play you music : EMPTY > why not ## open_question_factual;
@@ -2456,10 +2454,10 @@ let's see if i know it : EMPTY > artemis ## statement;
 would you like to talk about it now : yes > please ## pos_answer;
 tell me why do you like this artist : oh > that's good ## appreciation;
 what is the hardest position to play in baseball : EMPTY > thank you ## thanking;
-what do you want to talk about : derek > my name is derrick ## statement;
+what do you want to talk about : derek > my name is derek ## statement;
 so i don't understand why don't you enjoy traveling : EMPTY > what countries have you visited ## open_question_factual;
 did you know that : EMPTY > no ## neg_answer;
-do you want to tell me your name : EMPTY > my name is paul innes's ## statement;
+do you want to tell me your name : EMPTY > my name is david ## statement;
 but it's in my nature : EMPTY > do you like poodles ## yes_no_question;
 have you seen any good movies recently : EMPTY > three ## pos_answer;statement
 don't you think so : EMPTY > no ## neg_answer;
@@ -2490,7 +2488,7 @@ can you repeat the book name please : EMPTY > wolf hollow ## command;
 do you still want to continue our conversation about movies : no > this is like ## abandon;
 period : EMPTY > would you say ## yes_no_question;
 what was your favorite part in the movie : what is the weather in it > if i love ## opinion;
-they hanged themselves : EMPTY > are you getting horny ## yes_no_question;
+they hanged themselves : EMPTY > are you getting excited ## yes_no_question;
 here are some highlights : EMPTY > okay ## back-channeling;
 i just like it : EMPTY > you can actually see a computer ## statement;
 are you interested in sports : EMPTY > yes ## pos_answer;
@@ -2576,7 +2574,7 @@ do you want to tell me your name : EMPTY > sure ## pos_answer;
 what would it be : that's not the book > i said ## statement;
 who's your favorite author : tarsus her books are very > not good ## opinion;
 have you ever had a pet : EMPTY > no ## neg_answer;
-do you mind talking about something else : EMPTY > do you like sex ## yes_no_question;
+do you mind talking about something else : EMPTY > do you like friends ## yes_no_question;
 are you talking about the fate of the furious released in 2017 starring vin diesel as dominic toretto : the first one > the first fast and the furious ## statement;
 what movies are you looking forward to watching in the future : EMPTY > probably slender man ## opinion;
 have you ever had a pet : EMPTY > yes ## pos_answer;
@@ -2592,3 +2590,28 @@ do you want to tell me your name : EMPTY > i nine to see the eclipse ## nonsense
 fun : i like fun because you go to different places > and sometimes you get really comfy beds ## opinion;
 i think i would like to be a sea sponge and live in a pineapple under the sea : EMPTY > cool ## appreciation;
 have you seen any movies recently : EMPTY > i thought we were talking about music ## comment;
+do you mind tell me one more time : EMPTY > who is the piano
+can you repeat the book name please : EMPTY > the dragons of eden 
+do you prefer to watch movies in the theater or at home : EMPTY > maybe a whole besides the big screen 
+they scare my creators too : EMPTY > no 
+do you watch movies : EMPTY > i like to play with you 
+what do you think is the best acting performance of all time : but the morning brando in the godfather > marlon brando on the on the waterfront
+i am listening to music : EMPTY > yes 
+is there something else you'd like to talk about : EMPTY > music 
+do you watch movies : EMPTY > yes
+have you ever had a pet : no > yes 
+2019 : yes > i'm still here
+what do you think : EMPTY > think that was so stupid 
+any thoughts : that's amazing > really great 
+have you ever tried to guess someone else's password so many times that it locked their account : yes > i do 
+any thoughts : how did you know that it really > rick percent of the time
+what's the name of your dog : the dog is yoki > he's a chihuahua 
+do you prefer fiction or nonfiction books : EMPTY > fiction
+what book genre is your favorite : open > i really like inspiring books and true ones 
+what do you think is the best acting performance of all time : EMPTY > i don't know 
+did you ever see him perform live : EMPTY > no 
+period : i think it did in the ten > but stop
+what book has had the biggest impact on human history : i meant that barbara parks > and my favorite author
+i lost my train of thought : EMPTY > chat about marvel 
+just say stop : EMPTY > stop 
+any thoughts : EMPTY > stop 
