@@ -220,23 +220,34 @@ class DAProcessor(DataProcessor):
         examples = []
         with open(filename) as fp:
             for (i, line) in enumerate(fp):
-                # example line: "i think it usually does<:><emp> <rsp> does it say something<:>sd"
-                guid = "%s-%s" % (set_type, i)
-                text = line.split(">")
-                text_a = text[0].strip()
-                if not inference:
-                    split_da = text[1].split("##")
-                    text_b = split_da[0].strip()
-                    das = split_da[1].strip()
-                    label_1 = das.split(";")[0].strip()
-                    if binary_pred:
-                        label_1 = das
-                else:
-                    text_b = text[1].strip()
-                    label_1 = "INFERENCE"
-                
-                examples.append(
-                    InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label_1))
+                try:
+                    # example line: "i think it usually does<:><emp> <rsp> does it say something<:>sd"
+                    guid = "%s-%s" % (set_type, i)
+
+                    text = line.split(">")
+                    if len(text) != 2:
+                        raise AssertionError("Text should be length of 2. text={}".format(text))
+
+                    text_a = text[0].strip()
+                    if not inference:
+                        print("text:", text)
+                        split_da = text[1].split("##")
+                        if len(split_da) != 2:
+                            raise AssertionError("split_da should be length of 2. split_da={}".format(text))
+
+                        text_b = split_da[0].strip()
+                        das = split_da[1].strip()
+                        label_1 = das.split(";")[0].strip()
+                        if binary_pred:
+                            label_1 = das
+                    else:
+                        text_b = text[1].strip()
+                        label_1 = "INFERENCE"
+
+                    examples.append(
+                        InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label_1))
+                except AssertionError as e:
+                    print(e)
             return examples
 
 
