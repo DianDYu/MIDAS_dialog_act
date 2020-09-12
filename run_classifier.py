@@ -230,7 +230,6 @@ class DAProcessor(DataProcessor):
 
                     text_a = text[0].strip()
                     if not inference:
-                        print("text:", text)
                         split_da = text[1].split("##")
                         if len(split_da) != 2:
                             raise AssertionError("split_da should be length of 2. split_da={}".format(text))
