@@ -834,13 +834,13 @@ def main():
 
 
             else:
-                logits = logits.detach().cpu().numpy()
-                label_ids = label_ids.to('cpu').numpy()
-                tmp_eval_accuracy = accuracy(logits, label_ids)
+                tmp_eval_accuracy = accuracy(logits.detach().cpu().numpy(), label_ids.to('cpu').numpy())
 
                 if args.do_inference:
-                    top_k_value, top_k_ind = torch.topk(logits, 1)
-                    inference_writter.write(label_list[top_k_ind + ";\n"])
+                    for tgt_label, pred_da in zip(label_ids, logits):
+                        top_k_value, top_k_ind = torch.topk(pred_da, 1)
+                        top_id_data = top_k_ind.view(-1).data.cpu().numpy()[0]
+                        inference_writter.write(label_list[top_id_data] + ";\n")
                 else:
                     eval_loss += tmp_eval_loss.mean().item()
                     eval_accuracy += tmp_eval_accuracy
