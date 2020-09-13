@@ -279,11 +279,67 @@ class ColaProcessor(DataProcessor):
         return examples
 
 
+class SelfDisclosureProcessor(DataProcessor):
+    """Processor for the dialog act data set"""
+
+    def get_train_examples(self, data_dir, binary_pred):
+        """See base class."""
+        return self._create_examples(
+            os.path.join(data_dir, "train.txt"), "train", binary_pred)
+
+    def get_dev_examples(self, data_dir, binary_pred, inference=False):
+        """See base class."""
+        if not inference:
+            return self._create_examples(
+               os.path.join(data_dir, "dev.txt"), "dev", binary_pred, inference)
+        else:
+            return self._create_examples(
+               os.path.join(data_dir, "inference.txt"), "dev", binary_pred, inference)
+
+    def get_labels(self):
+        """See base class."""
+        return ["factual", "cognitive", "none", "emotional", "out-of-domain personal info"]
+
+        # return ['sd', 'b', 'bk', 'sv', 'aa', '%', '% -', 'ba', 'qy', 'ny', 'fc', 'qw', 'nn', 'h', 'qy^d', 'o', 'fo', 'bc', 'by', 'fw', 'bh', '^q', 'bf', 'na', 'ny^e', 'ad', '^2', 'b^m', 'qo', 'qh', '^h', 'ar', 'ng', 'nn^e', 'br', 'no', 'fp', 'qrr', 'arp', 'nd', 'oo', 'cc', 'co', 't1', 'bd', 'aap', 'am', '^g', 'qw^d', 'fa', 'ft', 'oqf', 'oqo', 'cm', 'cp', 'ns', 'bg', 'dad']
+
+    def _create_examples(self, filename, set_type, binary_pred, inference=False):
+        """Creates examples for the training and dev sets."""
+        examples = []
+        with open(filename) as fp:
+            for (i, line) in enumerate(fp):
+                try:
+                    # example line: "i think it usually does<:><emp> <rsp> does it say something<:>sd"
+                    guid = "%s-%s" % (set_type, i)
+
+                    text = line.split(">")
+                    if len(text) != 2:
+                        raise AssertionError("Text should be length of 2. text={}".format(text))
+
+                    text_a = text[0].strip()
+                    if not inference:
+                        split_da = text[1].split("##")
+                        if len(split_da) != 2:
+                            raise AssertionError("split_da should be length of 2. split_da={}".format(text))
+
+                        text_b = split_da[0].strip()
+                        das = split_da[1].strip()
+                        label_1 = das.split(";")[0].strip()
+                        if binary_pred:
+                            label_1 = das
+                    else:
+                        text_b = text[1].strip()
+                        label_1 = "INFERENCE"
+
+                    examples.append(
+                        InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label_1))
+                except AssertionError as e:
+                    print(e)
+            return examples
+
 def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer, binary_pred, inference=False):
     """Loads a data file into a list of `InputBatch`s."""
 
     label_map = {label : i for i, label in enumerate(label_list)}
-
     features = []
     for (ex_index, example) in enumerate(examples):
         tokens_a = tokenizer.tokenize(example.text_a)
@@ -507,6 +563,7 @@ def main():
         "mnli": MnliProcessor,
         "mrpc": MrpcProcessor,
         "da": DAProcessor,
+        "sd": SelfDisclosureProcessor
     }
 
     num_labels_task = {
@@ -514,7 +571,9 @@ def main():
         "mnli": 3,
         "mrpc": 2,
         "da": 23,
+        "sd": 4,
     }
+
 
     if args.local_rank == -1 or args.no_cuda:
         device = torch.device("cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu")
