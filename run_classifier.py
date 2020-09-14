@@ -99,7 +99,8 @@ class DataProcessor(object):
         """Gets a collection of `InputExample`s for the dev set."""
         raise NotImplementedError()
 
-    def get_labels(self):
+    @classmethod
+    def get_labels(cls):
         """Gets the list of labels for this data set."""
         raise NotImplementedError()
 
@@ -130,7 +131,8 @@ class MrpcProcessor(DataProcessor):
         return self._create_examples(
             self._read_tsv(os.path.join(data_dir, "dev.tsv")), "dev")
 
-    def get_labels(self):
+    @classmethod
+    def get_labels(cls):
         """See base class."""
         return ["0", "1"]
 
@@ -163,7 +165,8 @@ class MnliProcessor(DataProcessor):
             self._read_tsv(os.path.join(data_dir, "dev_matched.tsv")),
             "dev_matched")
 
-    def get_labels(self):
+    @classmethod
+    def get_labels(cls):
         """See base class."""
         return ["contradiction", "entailment", "neutral"]
 
@@ -198,7 +201,9 @@ class DAProcessor(DataProcessor):
         else:
             return self._create_examples(
                os.path.join(data_dir, "inference.txt"), "dev", binary_pred, inference)
-    def get_labels(self):
+
+    @classmethod
+    def get_labels(cls):
         """See base class."""
         # return ["oqf", "oqo", "qy", "ny", "ng", "h", "sd", "sv", "cm", "ad", "dad", "b",
         #     "ba", "%", "fp", "fc", "^h", "cp", "ft", "fa", "bd", "ns", "o", "bg", "qw"]
@@ -263,7 +268,8 @@ class ColaProcessor(DataProcessor):
         return self._create_examples(
             self._read_tsv(os.path.join(data_dir, "dev.tsv")), "dev")
 
-    def get_labels(self):
+    @classmethod
+    def get_labels(cls):
         """See base class."""
         return ["0", "1"]
 
@@ -296,9 +302,10 @@ class SelfDisclosureProcessor(DataProcessor):
             return self._create_examples(
                os.path.join(data_dir, "inference.txt"), "dev", binary_pred, inference)
 
-    def get_labels(self):
+    @classmethod
+    def get_labels(cls):
         """See base class."""
-        return ["factual", "cognitive", "none", "emotional", "out-of-domain personal info"]
+        return ["factual", "cognitive", "emotional"]
 
         # return ['sd', 'b', 'bk', 'sv', 'aa', '%', '% -', 'ba', 'qy', 'ny', 'fc', 'qw', 'nn', 'h', 'qy^d', 'o', 'fo', 'bc', 'by', 'fw', 'bh', '^q', 'bf', 'na', 'ny^e', 'ad', '^2', 'b^m', 'qo', 'qh', '^h', 'ar', 'ng', 'nn^e', 'br', 'no', 'fp', 'qrr', 'arp', 'nd', 'oo', 'cc', 'co', 't1', 'bd', 'aap', 'am', '^g', 'qw^d', 'fa', 'ft', 'oqf', 'oqo', 'cm', 'cp', 'ns', 'bg', 'dad']
 
@@ -571,7 +578,7 @@ def main():
         "mnli": 3,
         "mrpc": 2,
         "da": 23,
-        "sd": 4,
+        "sd": len(SelfDisclosureProcessor.get_labels()),
     }
 
 
