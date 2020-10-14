@@ -305,7 +305,7 @@ class SelfDisclosureProcessor(DataProcessor):
     @classmethod
     def get_labels(cls):
         """See base class."""
-        return ["factual", "cognitive", "emotional"]
+        return ["none", "factual", "cognitive", "emotional"]
 
         # return ['sd', 'b', 'bk', 'sv', 'aa', '%', '% -', 'ba', 'qy', 'ny', 'fc', 'qw', 'nn', 'h', 'qy^d', 'o', 'fo', 'bc', 'by', 'fw', 'bh', '^q', 'bf', 'na', 'ny^e', 'ad', '^2', 'b^m', 'qo', 'qh', '^h', 'ar', 'ng', 'nn^e', 'br', 'no', 'fp', 'qrr', 'arp', 'nd', 'oo', 'cc', 'co', 't1', 'bd', 'aap', 'am', '^g', 'qw^d', 'fa', 'ft', 'oqf', 'oqo', 'cm', 'cp', 'ns', 'bg', 'dad']
 
@@ -501,10 +501,10 @@ def main():
                         action='store_true',
                         help="Whether to run inference on the test set.")
     parser.add_argument("--do_lower_case",
-                        action='store_true',
+                        action='store_true', # TODO
                         help="Set this flag if you are using an uncased model.")
     parser.add_argument("--train_batch_size",
-                        default=32,
+                        default=4,
                         type=int,
                         help="Total batch size for training.")
     parser.add_argument("--eval_batch_size",
@@ -620,8 +620,9 @@ def main():
     num_labels = num_labels_task[task_name]
     label_list = processor.get_labels()
 
-    tokenizer = BertTokenizer.from_pretrained("bert-base-uncased", do_lower_case=args.do_lower_case)
+    # tokenizer = BertTokenizer.from_pretrained("bert-base-uncased", do_lower_case=args.do_lower_case)
     # tokenizer = BertTokenizer.from_pretrained(args.bert_model, do_lower_case=args.do_lower_case)
+    tokenizer = BertTokenizer.from_pretrained("bert-base-cased", do_lower_case=args.do_lower_case)
 
     train_examples = None
     num_train_optimization_steps = None
@@ -718,11 +719,16 @@ def main():
         model.train()
         binary_pred = args.binary_pred
         for _ in trange(int(args.num_train_epochs), desc="Epoch"):
+
             tr_loss = 0
             nb_tr_examples, nb_tr_steps = 0, 0
+
             for step, batch in enumerate(tqdm(train_dataloader, desc="Iteration")):
+                print("nb_tr_examples: ", nb_tr_examples)
+
                 batch = tuple(t.to(device) for t in batch)
                 input_ids, input_mask, segment_ids, label_ids = batch
+                print("batch: ", input_ids.size(), input_mask.size(), segment_ids.size(), label_ids.size())
                 loss = model(input_ids, segment_ids, input_mask, label_ids, binary_pred)
                 if n_gpu > 1:
                     loss = loss.mean() # mean() to average on multi-gpu.
@@ -802,7 +808,15 @@ def main():
             inference_writter = open(output_inference_file, "w")
 
         dev_num_1 = 1
+        print("nb_eval_steps", nb_eval_steps)
+        print("finished:", nb_eval_steps * 8)
+
+        all_predicted = []
+        all_expected = []
         for input_ids, input_mask, segment_ids, label_ids in tqdm(eval_dataloader, desc="Evaluating"):
+            print("nb_eval_steps", nb_eval_steps)
+            print("finished:", nb_eval_steps * 8)
+
             input_ids = input_ids.to(device)
             input_mask = input_mask.to(device)
             segment_ids = segment_ids.to(device)
@@ -842,11 +856,21 @@ def main():
 
             else:
                 tmp_eval_accuracy = accuracy(logits.detach().cpu().numpy(), label_ids.to('cpu').numpy())
+                print("predicted: ", np.argmax(logits.detach().cpu().numpy(), axis=1))
+                print("expected: ", label_ids.to('cpu').numpy())
+                print("tmp_eval_accuracy", tmp_eval_accuracy)
+
+                all_predicted.extend(np.argmax(logits.detach().cpu().numpy(), axis=1))
+                all_expected.extend(label_ids.to('cpu').numpy())
+
 
                 if args.do_inference:
                     for tgt_label, pred_da in zip(label_ids, logits):
                         top_k_value, top_k_ind = torch.topk(pred_da, 1)
+                        k_value = torch.sigmoid(top_k_value).view(-1).data.cpu().numpy()[0]
                         top_id_data = top_k_ind.view(-1).data.cpu().numpy()[0]
+                        print("Expected label: ", np.nonzero(tgt_label).view(-1).data.cpu().numpy())
+                        print("Predicted label: ", label_list[top_id_data], ", value: ", k_value)
                         inference_writter.write(label_list[top_id_data] + ";\n")
                 else:
                     eval_loss += tmp_eval_loss.mean().item()
@@ -857,6 +881,12 @@ def main():
 
         eval_loss = eval_loss / nb_eval_steps
 
+        from sklearn.metrics import confusion_matrix
+        confusion_matrix(all_expected, all_predicted)
+        print ("all predicted", all_predicted)
+        print ("all expected", all_expected)
+
+        print ("confusion_matrix:", confusion_matrix(all_expected, all_predicted))
 
         if args.do_eval:
             if args.binary_pred:

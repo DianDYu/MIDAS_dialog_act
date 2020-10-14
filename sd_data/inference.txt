@@ -1,146 +1,153 @@
-Hi, you heard right! : EMPTY > What was the latest movie that you saw and liked? ## factual;
-I watched Us recently and I liked that a lot. : Us is a great movie! > Do you like horror movies in general? ## factual;
-Have you seen any Ari Aster movies? They're pretty scary and suspenseful. : EMPTY > I've never heard of them - what are some of their movies? ## factual;
-I've never heard of them - what are some of their movies? : EMPTY > Midsommer and Hereditary, one is about a couple going to Sweden and finding a cult, and one is about a family haunted by demons. ## factual;
-Midsommer and Hereditary, one is about a couple going to Sweden and finding a cult, and one is about a family haunted by demons. : EMPTY > Oh okay! ## factual;
-It's weird but visually really beautiful and worth watching. : okay cool I'll maybe check it out! > Do you have any other recommendations? ## factual;
-Behind the Curve sounds interesting - can you tell me a little more about it? : EMPTY > It talks about people who think the earth is flat, and how that effects them and their lives as people push them away for seeming crazy. ## factual;
-Also, another horror movie you might like is The Witch, which is a very unique movie set in Puritan times. : EMPTY > I think I might have seen that - is it sometimes written VVitch? ## factual;
-Hello, I am here to help you looking for a movie trailer. : EMPTY > Hi I'm looking for a great SCI FI Action movie ## factual;
-Pacific rim. : EMPTY > What did you like about it, the characters, the story lines, what stood out to you? ## factual;
-What did you like about it, the characters, the story lines, what stood out to you? : The characters, actors, and story line was really enjoyable. > The special effects were great as well. ## cognitive;
-The characters, actors, and story line was really enjoyable. The special effects were great as well. : I agree, I really loved the ending to Pacific Rim. > The characters were great. ## cognitive;
-Yes I am, he does some good movies. I'm looking for something new though in that style of movie. : EMPTY > Are you a fan of creatures and aliens then? ## factual;
-Are you a fan of creatures and aliens then? : EMPTY > Both appeal to me a great deal! ## emotional;
-Both appeal to me a great deal! : Do you enjoy the aliens that help humans or try to kill the human species, or even both? > lol ## emotional;
-It really didn't get me, I preferred something like skyline or Battle for los angles. : EMPTY > I would bet you've already seen District 9 yeah? ## cognitive;
-It really didn't get me, I preferred something like skyline or Battle for los angles. : I would bet you've already seen District 9 yeah? > lol ## emotional;
-I'm noticing you really like the sci fi with that extra tough of action haha hmmmmm which means you've probably watch Aliens, and The Matrix, and all those goodies. How about the new Blade Runner movie? : EMPTY > No I haven't seen that one yet, I'm hesitant because the new remakes break with established lore of the originals, such as Total recall.. ## emotional;
-Have you seen the trailers for Frozen 2?? : EMPTY > I have not, but I don't like Frozen. ## cognitive;
-I heard Marvel Studios is coming out with a new one called "Black Widow" in 2020... : EMPTY > I would LOVE to see that ## emotional;
-I would LOVE to see that. : Scarlett Johannsen will be in it I think. > Looks pretty cool. ## cognitive;
-Scarlett Johannsen will be in it I think. Looks pretty cool. : EMPTY > It does, it's right up my alley. ## cognitive;
-It does, it's right up my alley. She was great in all the other movies. : EMPTY > Sweet, So would you like to watch the trailer? ## emotional;
-Sweet, So would you like to watch the trailer? : EMPTY > Sure! ## emotional;
-I'm doing great. Happy Thanksgiving! Are you interested in watching a movie trailer today? : EMPTY > Happy Thanksgiving to you too. ## cognitive;
-Action Suspense of the thriller kind. : EMPTY > Great. ## factual;
-What did you like about that movie? : EMPTY > It kept you guessing as to whether the person he said he was was really that character. ## cognitive;
-It kept you guessing as to whether the person he said he was was really that character. Or did he do a switch. : EMPTY > Awesome, that sounds really cool. ## cognitive;
-Awesome, that sounds really cool. Have you ever seen the movie Inception? I think you might like that, it has a lot of action and is suspensful, and you are trying to figure out what is going on most of hte time. : EMPTY > Yes, I did see that. ## factual;
-Yes, I did see that. In fact I had to see it twice to make sure I was thinking correctly about the movie. Did you see that one? : EMPTY > Yes I did, I really liked it. ## cognitive;
-Yes, I also saw that one and liked it as well. : Cool. Seems like we have similar tastes in movies! > Have you seen the trailer for Jojo Rabbit? ## factual;
-It does sound like it. No, I haven't seen that trailer for that movie. : EMPTY > Great! ## factual;
-It does sound like it. No, I haven't seen that trailer for that movie. : Great! > Its definitely suspensful, I saw it the other date. ## cognitive;
-Yes I would! : EMPTY > Perfect, I think you will really like it. ## cognitive;
-Hi! I'm doing great! : EMPTY > I am here to help you look for a movie trailer. ## factual;
-Hi! I'm doing great! : I am here to help you look for a movie trailer. > What kind of movies interest you? ## factual;
-The last movies i saw at the movies and enjoyed or streamed online?? : EMPTY > in the movie theater ## factual;
-in the movie theater. : EMPTY > Okay the last movies I really enjoyed that I saw at the movie theater was Richard Jewel ## cognitive;
-It is about Captain Chesley Sullenberger trying to make an emergency langding in the New York's Hudson River after it hits geese and has the potential to crash. : EMPTY > It is about Captain Chesley Sullenberger trying to make an emergency langding in the New York's Hudson River after it hits geese and has the potential to crash. ## factual;
-It is about Captain Chesley Sullenberger trying to make an emergency langding in the New York's Hudson River after it hits geese and has the potential to crash. : That sounds like a movie it enjoy watching! > That sounds like a movie it enjoy watching! ## emotional;
-Awesome! It was great to speak with you today! Enjoy! : EMPTY > Enjoy! ## factual;
-I did as well. : Have a good remainder of the day. > Have a good remainder of the day. ## factual;
-Have a good remainder of the day. I will be streaming Sully tonight thanks to you. : You as well. > You as well. ## factual;
-You as well. That is wonderful. Enjoy. : EMPTY > Enjoy. ## factual;
-Oh, nice! What was your favorite thing about the movie? : EMPTY > What was your favorite thing about the movie? ## factual;
-Oh, nice! What was your favorite thing about the movie? : Honestly, I think it was just how stylish everything was. > Honestly, I think it was just how stylish everything was. ## cognitive;
-Honestly, I think it was just how stylish everything was. You could really tell a lot of love was put into it. : EMPTY > You could really tell a lot of love was put into it. ## cognitive;
-That's a great observation. Have you seen the Star Wars movies? : EMPTY > Have you seen the Star Wars movies? ## factual;
-That's a great observation. Have you seen the Star Wars movies? : Many years ago, yes! > Many years ago, yes! ## emotional;
-Well, there are so many movies out there, it's hard to make time for all of them. : EMPTY > Well, there are so many movies out there, it's hard to make time for all of them. ## cognitive;
-Oh yes! I love a good drama or thriller! : EMPTY > I love a good drama or thriller! ## emotional;
-Okay! I personally enjoy movies with great cinematography, what about you? : EMPTY > I personally enjoy movies with great cinematography, what about you? ## cognitive;
-Absolutely! Thats what I love about a lot of Edgar Wright's movies. : EMPTY > Thats what I love about a lot of Edgar Wright's movies. ## cognitive;
-Hello. What was the last great movie you watched? : EMPTY > What was the last great movie you watched? ## factual;
-Hello, I just watched Good Boys. So funny. : Not familiar with that one. Is it a comedy? > Is it a comedy? ## factual;
-It is like that movie. Same director. I love horror movies as well. the scarier the better. Do you have any recomendations for those? : I LOVE horror movies. They are my absolute favorite. I can recommend older scary movies. New ones don't seem to be as scary. > New ones don't seem to be as scary. ## cognitive;
-It is like that movie. Same director. I love horror movies as well. the scarier the better. Do you have any recomendations for those? : I LOVE horror movies. They are my absolute favorite. I can recommend older scary movies. New ones don't seem to be as scary. I like supernatural horror. I think Fantasy island is supposed to be scary. > I think Fantasy island is supposed to be scary. ## cognitive;
-I LOVE horror movies. They are my absolute favorite. I can recommend older scary movies. New ones don't seem to be as scary. I like supernatural horror. I think Fantasy island is supposed to be scary. Have you seen that one yet? : I have not seen that one yet but I want too. > I have not seen that one yet but I want too. ## cognitive;
-I LOVE horror movies. They are my absolute favorite. I can recommend older scary movies. New ones don't seem to be as scary. I like supernatural horror. I think Fantasy island is supposed to be scary. Have you seen that one yet? : I have not seen that one yet but I want too. I agree that many horror movies today are not scary. > I agree that many horror movies today are not scary. ## cognitive;
-I LOVE horror movies. They are my absolute favorite. I can recommend older scary movies. New ones don't seem to be as scary. I like supernatural horror. I think Fantasy island is supposed to be scary. Have you seen that one yet? : I have not seen that one yet but I want too. I agree that many horror movies today are not scary. i watch some foreign ones these days. > i watch some foreign ones these days. ## factual;
-I have not seen that one yet but I want too. I agree that many horror movies today are not scary. i watch some foreign ones these days. They seem to do more scary things. : EMPTY > They seem to do more scary things. ## cognitive;
-I have not seen that one yet but I want too. I agree that many horror movies today are not scary. i watch some foreign ones these days. They seem to do more scary things. : They do. > They do. ## cognitive;
-They do. I do like the Conjuring films and there is another one coming out this year. Not a spin-off like Annabelle but an actual Conjuring movie. Can't wait. : I like those as well. > I like those as well. ## cognitive;
-The Changling with George C. Scott, not Angelina Jolie. What Lies Beneath, Woman in Black was scary too. A British film called Haunted with Aidan Quinn is quite good as well. Hard to find. : I think I will watch Woman in Black today. > I think I will watch Woman in Black today. ## cognitive;
-The second one wasn't as scary. I sure hope you enjoy it. : Thank you. > Thank you. ## factual;
-You too. Good luck finding scary movies to watch. : OK. > OK. ## factual;
-You too. Good luck finding scary movies to watch. : OK. Thank you so much again. > Thank you so much again. ## factual;
-Do you know that werewolf in london movie? : I watched that a ton of years ago. Probably back in the 80's. I think it's a little dated now, the special effects I mean. > I think it's a little dated now, the special effects I mean. ## cognitive;
- : Another older one would be Fright Night. Not the one with Collin Ferrell. > Another older one would be Fright Night. ## cognitive;
-Hi there. Have you seen any movies lately? : EMPTY > Hi there. ## factual;
-It was saw great, i loved it. : Me too. Why did you like it? > Me too. ## cognitive;
-Me too. Why did you like it? The action? The actors? : EMPTY > The action? ## factual;
-Yes, but whats your favorite Trailer for the year. : Trailer? Probably James Bond, No Time to Die. > Trailer? ## factual;
-Would you watch the trailer for it? : EMPTY > Awesome i thing i prefer the Top Gun2 ## cognitive;
-Yes I am so much interested. : Honestly, I've seen a bunch of times. > Yes I am so much interested ## emotional;
-Honestly, I've seen a bunch of times. Tom looks exactly the same. : EMPTY > Honestly, I've seen a bunch of times. ## factual;
-Awesome! Thank you. : EMPTY > Awesome! ## factual;
-I love horror movies! One of my favorites is The Shining and I really enjoyed the recent prequel, Dr. Sleep. What are some of your favorites? : EMPTY > One of my favorites is The Shining and I really enjoyed the recent prequel, Dr. Sleep. ## cognitive;
-I like Nightmare on Elm Street and Halloween. : EMPTY > What are some of your favorites? ## factual;
-Awesome Jamie Lee Curtis plays a great role! Are you looking for something similar? : Yes. > Are you looking for something similar? ## factual;
-Yes. I like Jamie Lee Curtis in the new Halloween, so I'd like to see something similar to that. : EMPTY > Yes. ## factual;
-That was a great scene! : EMPTY > I like it when the villain is articulate like in Hellraiser ## cognitive;
-Awesome. I like that reccomendation. : EMPTY > Awesome. ## factual;
-Awesome. I like that reccomendation. : Great. It was produced by Guillermo Del Toro. > Great. ## factual;
-Great. It was produced by Guillermo Del Toro. Have you enjoyed any other movies produced by him? : I have. > Have you enjoyed any other movies produced by him? ## factual;
-Hi there. : EMPTY > I will definitely do that ## factual;
-Star Wars. : EMPTY > What was the latest one have you watched? ## factual;
-Star Wars. : Ohh!!! > Star Wars ## factual;
-Yes indeed. : Plot   Three years into the Clone Wars, the Jedi rescue Palpatine from Count Dooku. As Obi-Wan pursues a new threat, Anakin acts as a double agent between the Jedi Council and Palpatine and is lured into a sinister plan to rule the galaxy. > Plot:  Three years into the Clone Wars, the Jedi rescue Palpatine from Count Dooku. ## factual;
-Thank yoU! : EMPTY > Thanks to you ## factual;
-Hello, how are you today? Did you have a nice Thanksgiving? What movies did you get to watch over the Thanksgiving weekend? : EMPTY > Did you have a nice Thanksgiving? ## factual;
-Hello, how are you today? Did you have a nice Thanksgiving? What movies did you get to watch over the Thanksgiving weekend? : I'm good thanks! > What movies did you get to watch over the Thanksgiving weekend? ## factual;
-Hello, how are you today? Did you have a nice Thanksgiving? What movies did you get to watch over the Thanksgiving weekend? : I'm good thanks! I had a pretty good holiday. Unfortunately I didn't get to watch any movies but I really wanted to see Knives Out. > I had a pretty good holiday. ## factual;
-I'm good thanks! I had a pretty good holiday. Unfortunately I didn't get to watch any movies but I really wanted to see Knives Out. I might see it later this month. : EMPTY > Unfortunately I didn't get to watch any movies but I really wanted to see Knives Out. ## factual;
-I'm good thanks! I had a pretty good holiday. Unfortunately I didn't get to watch any movies but I really wanted to see Knives Out. I might see it later this month. : I haven't got to see it yet either. I have seen the previews and saw the live interview with Jamie Lee Curtis for Knives Out. > I haven't got to see it yet either. ## factual;
-I'm good thanks! I had a pretty good holiday. Unfortunately I didn't get to watch any movies but I really wanted to see Knives Out. I might see it later this month. : I haven't got to see it yet either. I have seen the previews and saw the live interview with Jamie Lee Curtis for Knives Out. Agatha Christie mysteries are wonderful. > I have seen the previews and saw the live interview with Jamie Lee Curtis for Knives Out. ## factual;
-I haven't got to see it yet either. I have seen the previews and saw the live interview with Jamie Lee Curtis for Knives Out. Agatha Christie mysteries are wonderful. I hope you get to see it later this month from the previews, it is going to be a really great movie. : Definitely. > I hope you get to see it later this month from the previews, it is going to be a really great movie. ## cognitive;
-I have not! Murder mystery is exactly what I'm looking for, can you tell me a little more about the movie? : The movie follows a group of friends who participate in a couples‚Äô game night every week. > Murder mystery is exactly what I'm looking for, can you tell me a little more about the movie? ## cognitive;
-That's marvelous. I hope you enjoy it. : EMPTY > That's marvelous. ## emotional;
-Those sound very cool, do they have a lot of action in them? : Probably no as much as you the would like with Angela Lansbury. > Those sound very cool, do they have a lot of action in them? ## emotional;
-Probably no as much as you the would like with Angela Lansbury. You might like Murder on the Orient Express better with Poirot. : I think I've heard of that one. > You might like Murder on the Orient Express better with Poirot. ## factual;
-Probably no as much as you the would like with Angela Lansbury. You might like Murder on the Orient Express better with Poirot. : I think I've heard of that one. It has Judi Dench right? > I think I've heard of that one. ## factual;
-I heard that you were looking for a good movie trailer. : EMPTY > Hey! ## factual;
-I love thrillers and comedies. : EMPTY > I heard that you were looking for a good movie trailer. ## factual;
-I love thrillers and comedies. : I love comedies! > I love thrillers and comedies ## cognitive;
-I love thrillers and comedies. : I love comedies! You should check out New in Town on Netflix. > I love comedies! ## cognitive;
-I actually like John Mulaney, I will check it out! : EMPTY > It is by John Mulaney and is incredibly funny. ## cognitive;
-I actually like John Mulaney, I will check it out! : Awesome! > I actually like John Mulaney, I will check it out! ## emotional;
-Thank you very much! : No problem at all. > Thank you very much! ## emotional;
-I normally wait until they come out to digital. How about you? : EMPTY > I normally wait until they come out to digital. ## factual;
-I haven't always enjoyed superhero movies because often would get distracted when I watched them. However I did really like the Avengers and Joker. : It's pretty easy to get since there's a lot going on plot wise. > However I did really like the Avengers and Joker. ## cognitive;
-Definitely! What is the Watchmen about? : EMPTY > Definitely! ## emotional;
-Wow sounds so interesting. : Yes, the cinematography is also done very well. > Wow sounds so interesting ## emotional;
-Great! So are you thinking of making it a movie-night tonight? : EMPTY > Great! ## factual;
-I am definitely thinking about it. If not tonight, sometime this extended holiday weekend. : Awesome! There are some great movies right now that I'm really excited about. > Awesome! ## factual;
-I have really been into thrillers and horrors lately. : EMPTY > What movie are you thinking about this holiday weekend? ## factual;
-Oh really?! What have you watched lately? : EMPTY > Oh really?! ## emotional;
-Yes, definitely. : EMPTY > So would you like to watch this movie trailer? ## factual;
-ok let me see if I can find it for you. : You mentioned the reviews. > ok let me see if I can find it for you ## factual;
-7.6/10, Rotten Tomatoes  99%, Metacritic  84/100. : That sounds great. > 7.6/10, Rotten Tomatoes: 99%, Metacritic: 84/100 ## factual;
-I don't like graphic violence, which is why I tend toward the older westerns. : EMPTY > what kind of movies do you like? ## factual;
-Horror. : EMPTY > What was your favorite part of the movie? ## factual;
-I saw the new Lion King. : EMPTY > Do you like just old Western movies or more modern ones as well? ## factual;
-I accept this recommendation. It looks good! : EMPTY > I don't like graphic violence, which is why I tend toward the older westerns. ## cognitive;
-Its a good horror movie and its based on the book written by Stephen King. : EMPTY > Then how about this moive:  Hostiles. ## factual;
-No. Horror movies are too suspenseful and scary! : Oh! > I would love too! ## factual;
-Oh! ok. : EMPTY > It is a horror comedy about a bunch of college friends that go up to a cabin for a getaway that is ruined by a bunch of zombie beavers. ## factual;
-Have you seen any of the Lord of the Rings/Hobbit movies? : EMPTY > It is one of those movies that is aware it isn't great and is able to poke fun at itself. ## cognitive;
-Hello are you a fan of movies? : Yes indeed! > Hi!, yes i'm also looking for movie trailer ## factual;
-Do you like action movies or cmedy. : I prefer comedy. > I always like action movies ## cognitive;
-Thank you for the recommendation! Looking forward to watch the trailer and/or the movie! : EMPTY > I think you might like Independence Day with Will Smith. ## cognitive;
-they have other great movies as well. : EMPTY > Have you seen it? ## factual;
-yes, burn after reading is another fantastic film. : EMPTY > Did you saw a I am legend movie ## factual;
-He does have a great body gotta admit. I'll check that out too! : EMPTY > I do love the Iron Man series as well. ## cognitive;
-He does have a great body gotta admit. I'll check that out too! : glad we have the same taste in movies! > What type of movies you like ## factual;
-glad we have the same taste in movies! ill try and think of any others that i liket. : EMPTY > I like the Harry Potter series, Lord of the Rings Series (inlcluding the Hobbit). ## cognitive;
-good u. : i am doing good. > ok ## factual;
-ok, what kind of movies do you enjoy watching? : EMPTY > I see. ## factual;
-ok please share it. : EMPTY > Yes indeed! ## factual;
-i like it, that is a good recommendation - very well done. i accept it! : EMPTY > I prefer comedy. ## cognitive;
-i like it, that is a good recommendation - very well done. i accept it! : ok thank you. > Preferably dark comedy. ## cognitive;
-Ok, that sounds good. : EMPTY > Thank you for the recommendation! ## emotional;
-Hello, I'm looking for movie trailer ideas. : EMPTY > Ha yes it does, he plays a fitness trainer in the film. ## factual;
-He is a lot like Scorcese - so I would recommend The Irishman. : Yes, I've heard a lot of good things about that and it's on my list. > i hope you enjoy it ## factual;
-Yes, I've heard a lot of good things about that and it's on my list. I'm also looking for movies that are similar but maybe not as popular. : EMPTY > Thanks! ## emotional;
-you're welcome - bye now. : EMPTY > ok, what kind of movies do you enjoy watching? ## factual;
+I'm sorry to hear that.  Anyways,  What do you think of social distancing? Do you think it's hard to keep physical distance with others? : EMPTY > In some stores you have to get close or you may have to wait awhile while being in the way to get down an aisle.
+Nice!  Can you name a movie you like? : EMPTY > Ready Player One
+Cool!  I remember watching Ready Player One.   What do you think made it such a great movie? : EMPTY > I enjoyed the story as well as trying to find all the different characters they put into it.
+Yeah, that makes sense.  What were your favorite parts? : EMPTY > I really liked the battle at the end with the iron giant
+That's fine.  Anyways,  I recommend you watching "Santana". It's a action movie starring Paulo Americano. Have you seen it? : EMPTY > No I ahve not
+I like to go out and enjoy the sunshine and the fresh air.  By the way,  I've heard people are doing more online shopping these days because they thing it's safer and more convenient. What about you? : EMPTY >  I personally prefer grocery shopping in person so that I can pick out the items myself.
+I love pizza. It's a food that is a circle, and also a triangle!  Anyways,  Do you ever feel down during the quarantine? : EMPTY > Not so much.
+Yeah.  Can you think of another movie you like? : EMPTY > The 6th sense.
+I liked it too.  Anyways,  Maybe you will find this interesting.  Toni Collette has said that she was so moved by the emotional resonance of the story while filming, she did not even realize it was a horror film until after its release. What do you think? : EMPTY > Wow that is interesting! 
+I liked it too.  Anyways,  Maybe you will find this interesting.  Toni Collette has said that she was so moved by the emotional resonance of the story while filming, she did not even realize it was a horror film until after its release. What do you think? : EMPTY > I agree
+Cool.   What type of movies do you not like? : EMPTY > i like all genres
+Nice!  Can you name a movie you like? : EMPTY > Sure, I really like the Die Hard movies
+I see what you mean.  Can you think of another movie you like? : EMPTY > I liked the Avengers movie
+Cool, thanks for sharing!  Do you have another movie you like? : EMPTY > I like the Batman movie
+Yeah, that makes sense.  Do you have another movie you like? : EMPTY > I liked parasite
+I see what you mean.  What did you enjoy the most about this movie? Were there any cool and memorable scenes? : EMPTY > I really like the ending where the son was communicating with lights
+Nice.  What type of movies do you not like? : EMPTY > I don't like romance and comedies
+Yeah, that makes sense.  Anyways,  I recommend you watching "Shutter Island". It's a mystery movie starring Leonardo DiCaprio. Have you seen it? : EMPTY > Yes
+Nice.  Have you ever seen "Titanic", a drama movie starring Leonardo DiCaprio? I think it would be a good movie choice for you. : EMPTY > Yes
+Hi, it's nice talking to you!  Do you enjoy watching movies? : EMPTY >  I just watched I'm thinking of ending things. 
+Hi, it's nice talking to you!  Do you enjoy watching movies? : EMPTY >  have you seen it?
+I love the movie The Notebook.  Anyways,  Maybe you will find this interesting.  Initially, throughout the train scene, the music was supposed to fill up the gap during the silence between Joel and Clementine, until Screenwriter Charlie Kaufman suggested to do the opposite. Music was then played when Joel and Clementine talked, and paused when they paused. What do you think? : EMPTY > wow.
+I love the movie The Notebook.  Anyways,  Maybe you will find this interesting.  Initially, throughout the train scene, the music was supposed to fill up the gap during the silence between Joel and Clementine, until Screenwriter Charlie Kaufman suggested to do the opposite. Music was then played when Joel and Clementine talked, and paused when they paused. What do you think? : EMPTY > I didn't know that. 
+Nice.  What type of movies do you not like? : EMPTY > I don't really like animated stuff or action
+ Oh, okay. No worries!   Anyways,  I recommend you watching "Star Wars The Rise of Skywalker". It's a science fiction movie starring Adam Driver. Have you seen it? : EMPTY >  have you seen paterson
+I see what you mean.  Have you ever seen "Star Wars The Last Jedi", a science fiction movie starring Adam Driver? I think it would be a good movie choice for you. : EMPTY > yes. I've seen all Star Wars. 
+I see what you mean.  Have you ever seen "Star Wars The Last Jedi", a science fiction movie starring Adam Driver? I think it would be a good movie choice for you. : EMPTY > what genres do you like?
+This is what I heard about it  A father and son go on the run, pursued by the government and a cult drawn to the child's special powers. Would you consider watching it? : EMPTY > that's a confusing plot
+Hi, it's nice talking to you!  I've heard that many people are stuck at home longer than usual due to the corona virus. What about you? : EMPTY > hi
+I see what you mean.  Well, I guess staying at home might make people feel a bit depressed. Do you ever feel down during the quarantine? : EMPTY > Getting outside certainly helps moderate mood and overall mental well being
+I got your point.  What do you think of social distancing? It might be hard to keep social distance from people all the time, especially families and close friends. What do you think? Do you think it's hard to practice it? : EMPTY >  i think having a robust testing system is very important
+I see.  Do you ever feel down during the quarantine? : EMPTY > No, not really.  
+Yeah, that makes sense.  Well, I guess staying at home might make people feel a bit depressed. Do you ever feel down during the quarantine? : EMPTY > The meds are barely keeping me stable.
+ Well,   It's totally okay if you're not sure.  What parts of this movie did you like best? : EMPTY > I'm not sure I could pick a favorite part.
+That's okay.  Anyways,  I recommend you watching "Hulk". It's a action movie starring Eric Bana. Have you seen it? : EMPTY > Do you know the name of the movie where Hulk and Iron Man fight?
+I agree, I think it's a good thing to have a variety of food available.  I get it. Sometimes I feel a bit depressed when I see people staying at home all day. How about you, do you ever feel down during the quarantine? : EMPTY > Its very depressed to me in some days in a week but we managed some other activity like cooking reading cleaning and watch movie
+i see, I like Johnny Depp too.  I just heard about this. while filming Pirates of the Caribbean in London, Johnny Depp received a letter from a local 9 year old girl, who asked for help with "munity" against her teachers. Depp turned up with no warning at the school in full Jack Sparrow outfit, but advised against munity. Any thoughts? : EMPTY > None.
+I see.  Well, I guess staying at home might make people feel a bit depressed. Do you ever feel down during the quarantine? : EMPTY > Nothing.
+Hi, it's nice to talk to you again!  Did you know that I am a huge fan of movies? Good movies always makes me relaxed after a long day's work. I'm curious, do you enjoy watching movies? : EMPTY > OH
+ Oh, okay. No worries!   What do you think of social distancing? Do you think it's hard to keep physical distance with others? : EMPTY > It's necessary and easy to do.
+Nice!  Can you name a movie you like? : EMPTY > It's been a while since I viewed it, but I really like ì½ê¸°ì ì¸ ê·¸ë
+Maybe you will find this interesting.  In order to animate the scene where Chihiro force feeds Haku the medicine in his dragon form, Hayao Miyazaki had his animators study a dog's mouth as they fed it treats while a veterinarian held its lower jaw. What do you think? : EMPTY > That's good trivia to know, thank you.
+That's fine.  Do you want to know more about it? : EMPTY > Not really.
+Oh cool.  I remember watching Moon and I love it! I especially like the character development. I feel so immersed in the roles they played.   What do you think made it such a great movie? : EMPTY > The twist in the plot.
+Aww, science fiction movies are also good!  What type of movies do you not like? I don't like horror movies because they are disgusting and I'm too scared to watch them! : EMPTY > All types.  
+I agree.  Maybe you will find this interesting.  Director Ryan Coogler compared the Wakanda vibranium mines to the real-life situation of the Congo mines, where the valuable mineral coltan (used in manufacturing digital products, found only in the Congo region) is being mined. What do you think? : EMPTY > i think so because some Africa countries and gifted
+I think so too.  What parts of this movie did you like best? For me, the ending left me absolutely stunned in silence! : EMPTY > same here
+Aww, adventure movies are also good!  What type of movies do you not like? I don't like horror movies because they are disgusting and I'm too scared to watch them! : EMPTY > same here
+I like action and comedy adventure.  Who is your favorite actor or actress? Leonardo DiCaprio is Mine! He has a good sense of social responsibility and he made me almost fall in love with Jack in the movie Titanic. What about you? : EMPTY > chris tucker
+i agree, I can't resist Chris Tucker's charisma!  I just heard about this. Chris Tucker has a net worth of negative 11 million dollars and faces potential jail time. Any thoughts? : EMPTY > really
+Yeah.  Anyways,  I recommend you watching "The Fifth Element". It's a adventure movie starring Chris Tucker. It's one of my favorite, I just cannot stop thinking about it after I watched it. Have you seen it? : EMPTY > yes, very interesting
+ I'm so glad you like it!   How about "Rush Hour", have you watched it? It's a action movie with Chris Tucker in it. : EMPTY > yes, very interesting as well
+I love that movie.  How about "Jackie Brown", have you watched it? It's a crime movie with Chris Tucker in it. : EMPTY > yes
+Nice.  Have you ever seen "Billy Lynn's Long Halftime Walk", a drama movie starring Chris Tucker? I think it would be a good movie choice for you. : EMPTY > will do just that
+ Awesome!   Glad you like it.  Have you ever seen "The Meteor Man", a fantasy movie starring Chris Tucker? I think it would be a good movie choice for you. : EMPTY > yes
+Nice.  How about "Dead Presidents", have you watched it? It's a action movie with Chris Tucker in it. : EMPTY > yes
+I got your point.  Do you have another movie you like? : EMPTY > This winter I saw Knives Out, itâs another mystery, kind of an Agatha Christie sort of movie. 
+Yeah, I can't understand why people like horror movies. They are just too disgusting.  Who is your favorite actor or actress? Leonardo DiCaprio is Mine! He consistently gives great performances, and he uses his fame to help the environment too. What about you? : EMPTY > they seem down to earth
+Yeah, that makes sense.  Do you want to know more about it? : EMPTY > Sure, I guess
+This is what I heard about it  After Homer deliberately pollutes the town's water supply, Springfield is encased in a gigantic dome by the EPA and the family are declared fugitives. Would you consider watching it? : EMPTY > Nope, not at all interested
+Awesome!  I remember watching The Wizard of Oz and I love it! I especially like the character development. I feel so immersed in the roles they played.   What do you think made it such a great movie? : EMPTY >  We study all of these details, I think, because âThe Wizard of Ozâ fills such a ... 
+Awesome!  I remember watching The Wizard of Oz and I love it! I especially like the character development. I feel so immersed in the roles they played.   What do you think made it such a great movie? : EMPTY >  Garland was already a star when she made âWizard,â but not a great star
+I see.  I get it. Sometimes I feel a bit depressed when I see people staying at home all day. How about you, do you ever feel down during the quarantine? : EMPTY > You just get tired of staying at home and you feel like going out to resume normal social stuff but then you remember the virus is still as deadly as ever.
+Nice!  I like talking about movies. This makes me feel happy and connected. Can you name a movie you like? : EMPTY > The blind side
+Cool, I'm so glad we have a similar taste!   What type of movies do you not like? I don't like horror movies because they are disgusting and I'm too scared to watch them! : EMPTY > i dont like horror
+Hi, it's nice talking to you!  Did you know that I am a huge fan of movies? Good movies always makes me relaxed after a long day's work. I'm curious, do you enjoy watching movies? : EMPTY > I enjoy watching movies a lot.
+That's nice.  I remember watching The Nightmare Before Christmas and I love it! I especially like the character development. I feel so immersed in the roles they played.   What do you think made it such a great movie? : EMPTY > It did a good job at combinging the spookiness of Halloween with the magic of Christmas.
+Aww, fantasy movies are also good!  What type of movies do you not like? I don't like horror movies because they are disgusting and I'm too scared to watch them! : EMPTY > I don't think I have a particular genre that I don't like, but I don't watch horror much either.
+Nice!  I like talking about movies. This makes me feel happy and connected. Can you name a movie you like? : EMPTY > Hmmm, I guess Into the Spiderverse was pretty cool, I really liked the animation it had.
+I haven't seen that one yet.  Can you think of another movie you like? : EMPTY > The original Star Wars movies
+Ah,  Are you thinking about the 2019 film The Farewell with Awkwafina? : EMPTY > Nope, but it sounds like that could be interesting
+This is what I heard about it  The famed stepbrother inventors know what they're gonna do today. They're gonna rescue their sister from an alien abduction. Would you consider watching it? : EMPTY > Probably not since I don't know how i'd watch it and I'm not really in the mood for a movie like that
+Hi, it's nice talking to you!  Do you enjoy watching movies? : EMPTY > Yes
+Nice.  What type of movies do you not like? : EMPTY > Violent, and dark horror movies
+I see.  How about "Rob Roy", have you watched it? It's a history movie with John Hurt in it. : EMPTY > No I havnt seen that movie
+That sounds interesting.  I've heard people are doing more online shopping these days. I think it's a great idea as it's safer and more convenient than in-store shopping. What about you? : EMPTY > I have to shop tomorrow
+Hmm, I don't have an answer for now. I hope I can be smarter.  By the way,  This is what I heard about it  Grizz, Panda, and Ice Bear embark on an adventure to Canada after an agent from the Department of National Wildlife Control tries to put an end to their hi-jinx. Would you consider watching it? : EMPTY >  Probably not.
+Nice!  Can you name a movie you like? : EMPTY > American History X
+I see.  Can you think of another movie you like? : EMPTY > VHS
+Yeah, I see what you're saying.  Maybe you will find this interesting.  The brick house the three guys break into where all the VHS tapes are located is the same house from Marble Hornets, a found footage web series on YouTube that popularized Slender Man. What do you think? : EMPTY > Thats interesting
+Yeah.  What were your favorite parts? : EMPTY > The story with the demon girl
+That's okay.  Do you want to know more about it? : EMPTY > Sure
+This is what I heard about it  Sequel to the 2016 South Korean zombie film Busanhaeng (2016). Would you consider watching it? : EMPTY > Is it in english?
+Hi, it's nice talking to you!  Did you know that I am a huge fan of movies? Good movies always makes me relaxed after a long day's work. I'm curious, do you enjoy watching movies? : EMPTY > Good to hear that. 
+I like talking about movies. This makes me feel happy and connected. Can you name a movie you like? : EMPTY > For example, I liked the movie Prestige.
+I have never seen that movie.  Do you have another movie you like? : EMPTY > How about Shutter Island?
+Cool!  I remember watching Wonder Woman and I love it! I especially like the character development. I feel so immersed in the roles they played.   What do you think made it such a great movie? : EMPTY > I liked that the movie takes you to an adventurous imaginary world and it has lots of actions.
+I agree.  Maybe you will find this interesting.  The discussion in the boat about "the pleasures of the flesh" was improvised. What do you think? : EMPTY > I don't remember the discussion that well though.
+Hi, it's nice talking to you!  Did you know that I am a huge fan of movies? I'm curious, do you enjoy watching movies? : EMPTY > Hi
+Nice!  I like talking about movies! Can you name a movie you like? : EMPTY > Yeah i like captain marvel
+That's nice.  I remember watching Captain Marvel and I love it. I especially like the character development.   What do you think made it such a great movie? : EMPTY > Yes such a great movie
+Cool.  What parts of this movie did you like best? The ending really stood out to me. : EMPTY > I like climax and last fight
+Cool, thanks for sharing!  Maybe you will find this interesting.  Robert Downey Jr. was the only actor who read the entire script. What do you think? : EMPTY > That's surprising.
+I see what you mean.  Maybe you will find this interesting.  Toni Collette had told her agent that she didn't want to do any more heavy, dark films and only wanted to do comedies, but she loved the Hereditary script so much she couldn't turn it down. What do you think? : EMPTY > I didn't know that. 
+I see what you mean.  Maybe you will find this interesting.  Toni Collette had told her agent that she didn't want to do any more heavy, dark films and only wanted to do comedies, but she loved the Hereditary script so much she couldn't turn it down. What do you think? : EMPTY > That's very cool. 
+I see.  By the way, maybe you could try some self-care practices if you haven't. I look forward to seeing if they are helpful for you! For example, unplug from technology for half an hour and take a walk or do some gardening outside. Spending time outdoors is great for your physical and mental health. Soak up that summer sunshine and fresh air! : EMPTY > Thanks, I do try.
+I see.  By the way, maybe you could try some self-care practices if you haven't. I look forward to seeing if they are helpful for you! For example, unplug from technology for half an hour and take a walk or do some gardening outside. Spending time outdoors is great for your physical and mental health. Soak up that summer sunshine and fresh air! : EMPTY >  It is good to feel like someone likes me, but I know that they should not.
+What parts of this movie did you like best? For me, the ending left me absolutely stunned in silence! : EMPTY > I loved how poorly it went scattering Donnie's ashes.
+What parts of this movie did you like best? For me, the ending left me absolutely stunned in silence! : EMPTY > It was not how anyone even Donnie would have wanted it to go. 
+I love romantic comedies.  Who is your favorite actor or actress? Leonardo DiCaprio is Mine! He has a good sense of social responsibility and he made me almost fall in love with Jack in the movie Titanic. What about you? : EMPTY > Um. 
+Yeah.  Do you think your diet has changed since you've been staying at home a lot? : EMPTY > Yes, less fast food.
+Gotcha.  Do you ever feel down during the quarantine? : EMPTY > Sometimes.
+Nice!  Can you name a movie you like? : EMPTY > "American Pickle" was pretty fun.
+Yeah, that makes sense.  Can you think of another movie you like? : EMPTY > I liked "Raiders of the Lost Ark" a long time ago.
+My bad, I lost my train of thought.. Could you repeat what you said, or would you rather talk about something else? : EMPTY > hi
+Yeah, I see what you're saying.  Maybe you will find this interesting.  Mark Ruffalo revealed that he was given a fake script due to his habit of accidentally spoiling past Marvel movies. He jokingly claimed in an interview that the fake script was better than the real one. What do you think? : EMPTY > I alsbelive the Mark Ruff words.
+That's okay.  Can you think of another movie you like? : EMPTY > Do you have any hobbies?
+I like the movie "The Notebook".  Can you think of another movie you like? : EMPTY > The notebook was a good movie.  
+I like the movie "The Notebook".  Can you think of another movie you like? : EMPTY >  Who's your favorite actor?
+Cool, I'm so glad we have a similar taste!   What type of movies do you not like? I don't like horror movies because they are disgusting and I'm too scared to watch them! : EMPTY > I love horror movies, but I do not watch them alone.  
+Hi, it's nice to talk to you again!  Did you know that I am a huge fan of movies? I'm curious, do you enjoy watching movies? : EMPTY > I enjoy movies but I prefer TV shows
+That's nice.  I remember watching Jurassic World and I love it. I especially like the character development.   What do you think made it such a great movie? : EMPTY > I enjoyed the realistic CGI
+I know.  What parts of this movie did you like best? The ending really stood out to me. : EMPTY > I enjoyed the dramatic scenes
+I got your point.  Who is your favorite actor or actress? Leonardo DiCaprio is Mine! He consistently gives great performances, and he uses his fame to help the environment too. What about you? : EMPTY > I enjoy Chris Pratt
+Yeah, that makes sense.  Anyways,  I recommend you watching "Onward". It's a comedy movie starring Chris Pratt. I really enjoy watching it. Have you seen it? : EMPTY > No I have not, what's it about?
+Wowza, that sounds interesting!  I've heard people are doing more online shopping these days. I'm a bit nervous when I see my engineer friends go outside even if they wear masks and gloves. I wish they would shop online more to avoid going out and stay safe. What do you think? : EMPTY > For necessities I shop in stores, everything else is bought online.
+I see.  What do you think of social distancing? It feels strange, right? I feel sad people cannot get together. I heard people complaining it is hard to practice social distancing, especially when families and close friends want to get together. What do you think? Do you think it's hard to practice it? : EMPTY > I do miss seeing friends and grabbing a bite once in a while.
+I think it is a good thing to practice.  By the way, maybe you could try some self-care practices if you haven't. I look forward to seeing if they are helpful for you! For example, unplug from technology for half an hour and take a walk or do some gardening outside. Spending time outdoors is great for your physical and mental health. Soak up that summer sunshine and fresh air! : EMPTY > Ive been trying to spend more time outside, even if it is sitting outside to do my work.
+Cool!  I remember watching Deadpool 2 and I love it! I especially like the character development. I feel so immersed in the roles they played.   What do you think made it such a great movie? : EMPTY > Ryan Reynolds and just the geneal character of Deadpool, how he stops and talks to the camera.
+Cool, I'm so glad we have a similar taste!   What type of movies do you not like? I don't like horror movies because they are disgusting and I'm too scared to watch them! : EMPTY > Same here, plus I dont care to be scared.
+i agree, I can't resist Arnold Schwarzenegger's charisma!  I just heard about this. Arnold Schwarzenegger's parents used to beat him because they thought he was gay since his bedroom walls were covered with posters of men instead of women. Any thoughts? : EMPTY > He certainly had a drive since he was young.
+That's fine.  Do you want to know more about it? : EMPTY > are you sivaji ganesan
+I see what you mean.  Do you ever feel down during the quarantine? : EMPTY > Definitely.
+I see what you mean.  Do you ever feel down during the quarantine? : EMPTY > I don't like it.
+I do the same thing.  I wonder about people's diets while in quarantine. I feel bored when I see people cook with the same limited choices of food everyday and I think sometimes it is challenging to find new options. What about you, do you think your diet has changed since you've been staying at home a lot? : EMPTY > It's been stressful for me and I tend to eat when I'm stressed.
+I got your point.  What were your favorite parts? : EMPTY > My favorite part is Marty McFly meeting Doc for the first time and traveling in the time machine car
+I see what you mean.  Anyways, What are some genres you like? : EMPTY > My favorite genres are Comedy and Action
+Yeah, that makes sense.  Who is your favorite actor or actress? : EMPTY > My favorite actor Dwayne Johnson
+Cool, thanks for sharing!  Do you want to know more about it? : EMPTY > I think I am all good for now! Thanks so much for the chat today
+Hi, it's nice to talk to you again!  I've heard that many people are stuck at home longer than usual due to the corona virus. What about you? : EMPTY > I am getting outside and going to the local park to excercise. 
+Cool, thanks for sharing!  By the way, maybe you could try some self-care practices if you haven't. For example, unplug from technology for half an hour and take a walk or do some gardening outside. Spending time outdoors is great for your physical and mental health. Soak up that summer sunshine and fresh air! : EMPTY >  I go to the park everyday and get fresh air and excercise and I feel amazing and postive
+Yeah.  Well, I guess staying at home might make people feel a bit depressed. Do you ever feel down during the quarantine? : EMPTY > yes because things are not like it used to be
+Yeah.  Can you think of another movie you like? : EMPTY > Titantic
+Ah,  Are you talking about Titanic released in 1997? : EMPTY > Yes
+What do you think made it such a great movie? : EMPTY > Full love movie i like it
+I got your point.  Maybe you will find this interesting.  In the scene where the water comes crashing into the Grand Staircase room, the film makers had only one shot at it because the entire set and furnishings were going to be destroyed in the shot. What do you think? : EMPTY > Nice and super
+Yeah.  Who is your favorite actor or actress? : EMPTY > James bond
+Gotcha.  Have you ever seen "After", a romance movie starring Josephine Langford? I think it would be a good movie choice for you. : EMPTY > yes
+Cool, thanks for sharing!  Can you think of another movie you like? : EMPTY > I also liked TERMINATOR 2: JUDGMENT DAY.
+Yeah, that makes sense.  Maybe you will find this interesting.  Because River Phoenix's agent refused to show him the film treatment for "My Own Private Idaho", in late 1990 Keanu Reeves rode his motorcycle from Canada to Phoenix's hometown of Gainesville, Florida to hand deliver it himself. What do you think? : EMPTY > I love that. 
+I got your point.  Anyways, What are some genres you like?  I personally like comedy movies. The good ones always make me laugh out loud and feel energized! What about you? : EMPTY > My favorite is probably horror.
+Cool, I'm so glad we have a similar taste!   What type of movies do you not like? I don't like horror movies because they are disgusting and I'm too scared to watch them! : EMPTY > Only that bad ones
+Cool, I'm so glad we have a similar taste!   What type of movies do you not like? I don't like horror movies because they are disgusting and I'm too scared to watch them! : EMPTY >  I'll watch any type of movie if it's supposed to be good.
+ I'm so glad you like it!   Who is your favorite actor or actress? Leonardo DiCaprio is Mine! He has a good sense of social responsibility and he made me almost fall in love with Jack in the movie Titanic. What about you? : EMPTY > I am a fan of Jake Gyllenhaal.
+I see what you mean.  Do you want to know more about it? : EMPTY > Sure, thanks.
+I see what you mean.  Well, I guess staying at home might make people feel a bit depressed. Do you ever feel down during the quarantine? : EMPTY > In the beginning i was pretty sad. 
+I see what you In the beginning i was pretty sad. I live alone, and that gets - well - lonely. Thats why i started exercising daily, and focusing my energy on cooking and juicing so that i don't fall into despair..  Well, I guess staying at home might make people feel a bit depressed. Do you ever feel down during the quarantine? : EMPTY >  It's really easy to become depressed during these dark times that are upon us.
+Yeah, I can't understand why people like horror movies. They are just too disgusting.  Who is your favorite actor or actress? Leonardo DiCaprio is Mine! He consistently gives great performances, and he uses his fame to help the environment too. What about you? : EMPTY > Sadly he played some prominent roles, that were amazing, but all while he was battling cancer. 
+It's about a group of kids who are sent to a magical world to solve a mystery.  By the way,  Do you want to know more about it? : EMPTY > tell me more
+I see.  Do you ever feel down during the quarantine? : EMPTY > i feel down
+okay cool.  Anyways,  I recommend you watching "Scary Movie". It's a comedy movie starring Anna Faris. It's one of my favorite, I just cannot stop thinking about it after I watched it. Have you seen it? : EMPTY > May be.
+Hi, it's nice to talk to you again!  Did you know that I am a huge fan of movies? I'm curious, do you enjoy watching movies? : EMPTY > I don't like movies that much, because I have no way to watch them
+Gotcha.  Do you have another movie you like? : EMPTY > I like Ratatouille
